@@ -13,8 +13,8 @@ public class Swipe : MonoBehaviour
     public Transform target;
     public bool shouldGoToTarget;
     public float delta = 0.1f;
-    public Generation maref;
-    private int ind = 0;
+    //public Generation maref;
+    //private int ind = 0;
 
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class Swipe : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (Input.GetKey(KeyCode.Q))
         {
@@ -65,5 +65,5 @@ public class Swipe : MonoBehaviour
             }
         }
 
-    }
+    }*/
 }
