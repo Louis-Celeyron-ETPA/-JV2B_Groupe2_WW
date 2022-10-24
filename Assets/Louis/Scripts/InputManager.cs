@@ -65,10 +65,4 @@ public class InputManager : MonoBehaviour
         Debug.Log(input);
     }
 
-    public void Start()
-    {
-        print(ManagerManager.DifficultyManager.maxDifficulty);
-    }
-
-
 }
