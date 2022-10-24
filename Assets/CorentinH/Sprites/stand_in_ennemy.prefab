@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5249267087021721547}
   - component: {fileID: 5621289282925946041}
+  - component: {fileID: 1982056428955408613}
   m_Layer: 0
   m_Name: stand_in_ennemy
   m_TagString: Untagged
@@ -84,3 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1982056428955408613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912802409277532087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17714a56a1b994f408f293ec0aa78120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemy: {fileID: 912802409277532087}
+  Moveleft: -0.0001
+  Moveright: 0.0001
