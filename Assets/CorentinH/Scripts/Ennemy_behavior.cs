@@ -7,8 +7,9 @@ namespace HARDYCorentin
     public class Ennemy_behavior : MonoBehaviour
     {
         public GameObject ennemy;
-        public float Moveleft = -0.0001f;
-        public float Moveright = 0.0001f;
+        public float Moveleft = -1f;
+        public float Moveright = 1f;
+        public float Stayput = 0f;
         // Start is called before the first frame update
         void Start()
         {
@@ -18,17 +19,20 @@ namespace HARDYCorentin
         // Update is called once per frame
         void Update()
         {
-            if (0 > ennemy.transform.position.x)
+
+            if (Camera.main.WorldToScreenPoint(ennemy.transform.position).x < Camera.main.pixelWidth/2)
             {
-                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(ennemy.transform.position.x + Moveright, 200, Camera.main.farClipPlane));
+                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(ennemy.transform.position.x + Moveright, 200, Camera.main.farClipPlane))*-1;
+                Debug.Log("A");
             }
-            else if (ennemy.transform.position.x > 0)
+            else if (Camera.main.WorldToScreenPoint(ennemy.transform.position).x > Camera.main.pixelWidth / 2)
             {
-                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(ennemy.transform.position.x + Moveleft, 200, Camera.main.farClipPlane));
+                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(ennemy.transform.position.x + Moveleft, 200, Camera.main.farClipPlane))*-1;
+                Debug.Log("B");
             }
-            else if (ennemy.transform.position.x == 0)
+            else if (Camera.main.WorldToScreenPoint(ennemy.transform.position).x == Camera.main.pixelWidth / 2)
             {
-                return;
+                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(ennemy.transform.position.x + Stayput, 200, Camera.main.farClipPlane))*-1;
             }
         }
     }
