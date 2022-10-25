@@ -7,9 +7,9 @@ namespace HARDYCorentin
     public class Ennemy_behavior : MonoBehaviour
     {
         public GameObject ennemy;
-        public float Moveleft = -1f;
-        public float Moveright = 1f;
-        public float Stayput = 0f;
+        public float moveleft = -0.01f;
+        public float moveright = 0.01f;
+        public float stayput = 0f;
         // Start is called before the first frame update
         void Start()
         {
@@ -20,7 +20,7 @@ namespace HARDYCorentin
         void Update()
         {
 
-            if (Camera.main.WorldToScreenPoint(ennemy.transform.position).x < Camera.main.pixelWidth/2)
+            /*if (Camera.main.WorldToScreenPoint(ennemy.transform.position).x < Camera.main.pixelWidth/2)
             {
                 transform.position = Camera.main.ScreenToWorldPoint(new Vector3(ennemy.transform.position.x + Moveright, 200, Camera.main.farClipPlane))*-1;
                 Debug.Log("A");
@@ -33,6 +33,22 @@ namespace HARDYCorentin
             else if (Camera.main.WorldToScreenPoint(ennemy.transform.position).x == Camera.main.pixelWidth / 2)
             {
                 transform.position = Camera.main.ScreenToWorldPoint(new Vector3(ennemy.transform.position.x + Stayput, 200, Camera.main.farClipPlane))*-1;
+            }*/
+            if (ennemy.transform.position.x < 0)
+            {
+                transform.position =/* Camera.main.ScreenToWorldPoint(*/new Vector3(ennemy.transform.position.x + moveright, 0, 57.9f)/*)*/;
+                Debug.Log("A");
+            }
+            if (ennemy.transform.position.x > 0)
+            {
+                transform.position =/* Camera.main.ScreenToWorldPoint(*/new Vector3(ennemy.transform.position.x + moveleft, 0, 57.9f)/*)*/;
+                Debug.Log("B");
+
+                if (ennemy.transform.position.x == 0)
+                {
+                    transform.position =/* Camera.main.ScreenToWorldPoint(*/new Vector3(ennemy.transform.position.x + stayput, 0, 57.9f)/*)*/;
+                    Debug.Log("C");
+                }
             }
         }
     }
