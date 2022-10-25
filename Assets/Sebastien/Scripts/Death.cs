@@ -5,24 +5,61 @@ using UnityEngine;
 public class Death : MonoBehaviour
 {
     public bool isDead = false;
-    public int livesLeft;
+    public int livesLeft = 3;
 
     public GameObject lifeHUD1;
     public GameObject lifeHUD2;
     public GameObject lifeHUD3;
 
     public GameObject player;
+    public Rigidbody2D playerRgb;
 
+    public float initalX = -8f;
+    public float initalY = -2f;
+
+    public BallInteraction thrownBall;
+    public BallInteraction strengthBall;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        livesLeft = 3;
+
+        Debug.Log(livesLeft + " vies restantes");
+
+        //player.transform.position = new Vector2(initalX, initalY);
+
     }
 
     // Update is called once per frame
     void Update()
+    {   
+        if(isDead && livesLeft > 0)
+        {
+            Respawn();
+        }
+
+       
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.transform.gameObject.name == "Ball")
+        {
+            isDead = true;
+            livesLeft -= 1;
+            Debug.Log(livesLeft + " vies restantes");
+            LifeLoss();
+            player.transform.position = new Vector2(initalX, initalY);
+            playerRgb.velocity = new Vector2 (0,0) ;
+            strengthBall.strength = 0f;
+        }
+
+    }
+
+    public void LifeLoss()
+    {
+
         if (livesLeft == 3)
         {
             lifeHUD1.SetActive(true);
@@ -42,53 +79,18 @@ public class Death : MonoBehaviour
             lifeHUD2.SetActive(false);
             lifeHUD3.SetActive(false);
         }
-
-        if (isDead)
+        else if (livesLeft == 0)
         {
-            LifeLoss();
-            Respawn();
-
-        }
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.gameObject.name == "Ball")
-        {
-            collision.gameObject.SetActive(false);
-            isDead = true;
-            Debug.Log(livesLeft + " vies restantes");
-           
-        }
-
-    }
-
-    public void LifeLoss()
-    {
-
-        if (livesLeft == 3)
-        {
-            livesLeft = 2;
-
-        }
-        else if (livesLeft == 2)
-        {
-            livesLeft = 1;
-        }
-
-        else if (livesLeft == 1)
-        {
-            livesLeft = 0;
+            lifeHUD1.SetActive(false);
+            lifeHUD2.SetActive(false);
+            lifeHUD3.SetActive(false);
         }
     }
 
     public void Respawn()
     {
-        if (isDead)
-        {
-            Instantiate(player, (new Vector2(-7,-1.5f)), transform.rotation);
-            isDead = false;
-        }
+        isDead = false;
+        thrownBall.isThrowing = false;
 
     }
 }
