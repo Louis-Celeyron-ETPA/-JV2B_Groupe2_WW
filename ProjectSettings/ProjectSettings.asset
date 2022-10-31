@@ -645,8 +645,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: JV2B_Groupe2_WW
-  metroPackageVersion: 
+  metroPackageName: JV2BGroupe2WW
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -654,7 +654,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: JV2B_Groupe2_WW
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: JV2B_Groupe2_WW
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
