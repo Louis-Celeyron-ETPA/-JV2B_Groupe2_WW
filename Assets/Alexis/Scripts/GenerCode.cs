@@ -13,6 +13,7 @@ public class GenerCode : MonoBehaviour
     public TextMeshProUGUI texte1;
     public TextMeshProUGUI texte2;
     public TextMeshProUGUI texte3;
+    private int indexCombi = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,5 +57,45 @@ public class GenerCode : MonoBehaviour
     void Update()
     {
         
+       
+        
+            
+    }
+    void CombiHaut()
+    {
+        combiRepro.Add(1);
+        if (combiBase[indexCombi] == combiRepro[indexCombi])
+        {
+            Debug.Log("Bien");
+            indexCombi = indexCombi + 1;
+        }
+    }
+
+    void CombiDroite()
+    {
+        combiRepro.Add(2);
+        if (combiBase[indexCombi] == combiRepro[indexCombi])
+        {
+            Debug.Log("Bien");
+            indexCombi = indexCombi + 1;
+        }
+    }
+    void CombiBas()
+    {
+        combiRepro.Add(3);
+        if (combiBase[indexCombi] == combiRepro[indexCombi])
+        {
+            Debug.Log("Bien");
+            indexCombi = indexCombi + 1;
+        }
+    }
+    void CombiGauche()
+    {
+        combiRepro.Add(4);
+        if (combiBase[indexCombi] == combiRepro[indexCombi])
+        {
+            Debug.Log("Bien");
+            indexCombi = indexCombi + 1;
+        }
     }
 }
