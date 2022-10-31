@@ -9,25 +9,32 @@ public class PathManager : MonoBehaviour
     public Transform shark;
     public CinemachineSmoothPath startPath, newPath;
     public SpriteRenderer sprite;
-    private float newLength; 
+    public float[] initialSpeedRange; 
+    private float newLength;
+    private CinemachineSmoothPath currentPath;
+    public FinalPosManager fpm;
+    public int finalPositionIndex; 
+
     //public Vector3[] initialPath;
     //public Vector3[] nextPath; 
 
     public float timer;
+    public float finalTimer;
     private bool timerComplete = false;
     private bool pathChanged = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        //SetInitialPath(); 
+        cart.m_Speed = initialSpeedRange[0];
+        currentPath = startPath; 
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0)
+        if (timer > 0 && !timerComplete)
         {
             timer -= Time.deltaTime;
         }
@@ -35,26 +42,32 @@ public class PathManager : MonoBehaviour
         {
             if (!timerComplete)
             {
+                ChangeSprite();
+                ChangePath(); 
                 timerComplete = true;
-                startPath.m_Waypoints = new CinemachineSmoothPath.Waypoint[2];
-                startPath.m_Waypoints[0].position = new Vector3(shark.position.z, shark.position.y, shark.position.x);
-                startPath.m_Waypoints[1].position = newPath.m_Waypoints[0].position;
-                startPath.m_Looped = false;
-                newLength = Vector3.Distance(startPath.m_Waypoints[0].position, startPath.m_Waypoints[1].position);
-                Debug.Log(newLength); 
-                cart.m_Position = 0;
+                
             }
         }
         if (timerComplete && !pathChanged)
         {
-            if (cart.m_Position >= newLength)
+            if (cart.m_Position == 1)
             {
-                cart.m_Path = newPath;
-                cart.m_Position = 0;
-                timerComplete = false;
+                FollowNewPath(); 
                 pathChanged = true;
             }
         }
+
+        if(finalTimer > 0)
+        {
+            finalTimer -= Time.deltaTime;
+        }
+        else
+        {
+            GetToFinalPosition();
+        }
+
+        
+
 
     }
 
@@ -68,18 +81,42 @@ public class PathManager : MonoBehaviour
 
     void ChangePath()
     {
-        //startPath.m_Resolution = 
-        //startPath.m_Waypoints[0].position = Vector3.MoveTowards(startPath.m_Waypoints[0].position, newPath.m_Waypoints[0].position, 0.01f);
-        //startPath.m_Waypoints[1].position = Vector3.MoveTowards(startPath.m_Waypoints[1].position, newPath.m_Waypoints[1].position, 0.01f);
-        //startPath.m_Waypoints[2].position = Vector3.MoveTowards(startPath.m_Waypoints[2].position, newPath.m_Waypoints[2].position, 0.01f);
-        //startPath.m_Waypoints[3].position = Vector3.MoveTowards(startPath.m_Waypoints[3].position, newPath.m_Waypoints[3].position, 0.01f);
+        currentPath.m_Waypoints = new CinemachineSmoothPath.Waypoint[2];
+        currentPath.m_Waypoints[0].position = new Vector3(shark.position.z, shark.position.y, shark.position.x);
+        currentPath.m_Waypoints[1].position = newPath.m_Waypoints[0].position;
+        currentPath.m_Looped = false;
+
+
+        //Ajustements pour adapter la vitesse au nouveau chemin 
+        newLength = Vector3.Distance(currentPath.m_Waypoints[0].position, currentPath.m_Waypoints[1].position); //Calcul de la distance entre les deux nouveaux points
+        cart.m_PositionUnits = CinemachinePathBase.PositionUnits.PathUnits; // Changement du PositionUnits pour changer de path à la position 1
+        cart.m_Position = 0;
+        cart.m_Speed /= newLength; // Diminution de la vitesse en fonction de la nouvelle distance car la vitesse est adaptée au PositionUnits
+
+    }
+
+    void FollowNewPath()
+    {
+        currentPath = newPath;
+        cart.m_Path = newPath;
+        cart.m_Position = 0;
+        cart.m_PositionUnits = CinemachinePathBase.PositionUnits.Distance;  
+        cart.m_Speed = Random.Range(initialSpeedRange[0], initialSpeedRange[1]); // Réassignement de la vitesse 
+    }
+
+    void GetToFinalPosition()
+    {
+        currentPath.m_Waypoints = new CinemachineSmoothPath.Waypoint[2];
+        currentPath.m_Waypoints[0].position = new Vector3(shark.position.z, shark.position.y, shark.position.x);
+        currentPath.m_Waypoints[1].position = fpm.finalPositions[finalPositionIndex];
+        currentPath.m_Looped = false;
     }
 
 
 
     void ChangeSprite()
     {
-        sprite.color = Color.blue; 
+        sprite.color = new Color(0.29f, 0.60f, 0.80f); 
     }
    
 }
