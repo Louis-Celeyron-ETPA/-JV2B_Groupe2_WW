@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Finito_Pipo : MonoBehaviour
+public class RandomFilCut : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,14 +13,6 @@ public class Finito_Pipo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        print("YOU WIN !!!!!");
-    }
-
-
 }
