@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Console
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,11 @@ MonoBehaviour:
   m_MinSize: {x: 503, y: 321}
   m_MaxSize: {x: 16192, y: 12117}
   vertical: 0
+<<<<<<< HEAD
   controlID: 38
+=======
+  controlID: 93
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +72,13 @@ MonoBehaviour:
     y: 0
     width: 605
     height: 947
+<<<<<<< HEAD
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -120,8 +129,13 @@ MonoBehaviour:
     y: 561
     width: 1955
     height: 386
+<<<<<<< HEAD
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 12}
@@ -223,7 +237,11 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 321}
   m_MaxSize: {x: 8096, y: 12117}
   vertical: 1
+<<<<<<< HEAD
   controlID: 39
+=======
+  controlID: 94
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +266,11 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 40
+=======
+  controlID: 95
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,22 +339,37 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Alexis/Scripts
+=======
+    - Assets/Louis/Scripts
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Alexis/Scripts
+=======
+  - Assets/Louis/Scripts
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\game\Documents\JV2B_Groupe2_WW
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 23}
     m_SelectedIDs: ea5a0000
     m_LastClickedID: 23274
     m_ExpandedIDs: 00000000aa5a0000b25a000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 26}
+    m_SelectedIDs: 485a0000
+    m_LastClickedID: 23112
+    m_ExpandedIDs: 000000000c5a00001c5a000000ca9a3bffffff7f
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +397,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000aa5a0000
+=======
+    m_ExpandedIDs: 000000000c5a0000
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -488,9 +529,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 90efffff
       m_LastClickedID: -4208
       m_ExpandedIDs: 7aebffff90efffffeaeffffff8f0ffff70f1ffffcaf1ffffc0f2ffffe6f3ffff28f4ffff6af4ffffb4f4fffff6f4ffff38f5ffff7ef5ffff02f6ffff44f6ffff28f7ffff6af7ffff64f8ffff
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 32fbffff
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -783,7 +830,19 @@ MonoBehaviour:
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
       m_Size: {x: 1, y: 1}
+=======
+      m_Size: {x: 1.48, y: 1.48}
+    zGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0}
+>>>>>>> 10c5550f9784267bef2012ac11598597a6e1aacf
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
