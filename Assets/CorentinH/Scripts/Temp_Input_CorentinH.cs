@@ -5,8 +5,8 @@ namespace HARDYCorentin{
     public class Temp_Input_CorentinH : MonoBehaviour
     {
         public GameObject player;
-        public float playermoveleft = -1f;
-        public float playermoveright = 1f;
+        public float playermoveleft = -0.04f;
+        public float playermoveright = 0.04f;
         // Start is called before the first frame update
         void Start()
         {
@@ -18,8 +18,15 @@ namespace HARDYCorentin{
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-
+                transform.position = new Vector3(player.transform.position.x + playermoveleft, 0f);
+                Debug.Log("A");
             }
-        }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.position = new Vector3(player.transform.position.x + playermoveright, 0f);
+                Debug.Log("B");
+            }
+            //else if ()
+        } 
     }
 }
