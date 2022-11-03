@@ -18,7 +18,9 @@ public class FinalPosManager : MonoBehaviour
             positions.RemoveAt(index); 
         }
 
-        Debug.Log(finalPositions); 
+        Debug.Log(finalPositions[0]); 
+        Debug.Log(finalPositions[1]); 
+        Debug.Log(finalPositions[2]); 
         
     }
 

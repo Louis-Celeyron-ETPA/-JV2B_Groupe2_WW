@@ -21,6 +21,7 @@ public class PathManager : MonoBehaviour
     public float timer;
     public float finalTimer;
     private bool timerComplete = false;
+    private bool finalTimerComplete = false;
     private bool pathChanged = false;
 
     // Start is called before the first frame update
@@ -63,7 +64,12 @@ public class PathManager : MonoBehaviour
         }
         else
         {
-            GetToFinalPosition();
+            if (!finalTimerComplete)
+            {
+                GetToFinalPosition();
+                finalTimerComplete = true; 
+            }
+            
         }
 
         
@@ -110,6 +116,13 @@ public class PathManager : MonoBehaviour
         currentPath.m_Waypoints[0].position = new Vector3(shark.position.z, shark.position.y, shark.position.x);
         currentPath.m_Waypoints[1].position = fpm.finalPositions[finalPositionIndex];
         currentPath.m_Looped = false;
+
+        //Ajustements pour adapter la vitesse au nouveau chemin 
+        newLength = Vector3.Distance(currentPath.m_Waypoints[0].position, currentPath.m_Waypoints[1].position); //Calcul de la distance entre les deux nouveaux points
+        cart.m_PositionUnits = CinemachinePathBase.PositionUnits.PathUnits; // Changement du PositionUnits pour changer de path à la position 1
+        cart.m_Position = 0;
+        cart.m_Speed /= newLength; // Diminution de la vitesse en fonction de la nouvelle distance car la vitesse est adaptée au PositionUnits
+
     }
 
 

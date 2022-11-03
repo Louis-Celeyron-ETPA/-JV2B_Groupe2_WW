@@ -496,9 +496,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positions:
-  - {x: -3, y: 0, z: 0}
+  - {x: 0, y: 0, z: -3}
   - {x: 0, y: 0, z: 0}
-  - {x: 3, y: 0, z: 0}
+  - {x: 0, y: 0, z: 3}
   finalPositions: []
 --- !u!4 &1183361252
 Transform:
