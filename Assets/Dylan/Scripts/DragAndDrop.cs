@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
+
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +15,9 @@ public class DragAndDrop : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnMouseDown()
+    {
+
     }
 }
