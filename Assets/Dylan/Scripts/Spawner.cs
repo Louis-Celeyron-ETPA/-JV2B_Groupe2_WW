@@ -5,6 +5,7 @@ namespace Dylan
 {
     public class Spawner : MonoBehaviour
     {
+        public float spawnPositionZ = 0.001f;
         public GameObject objectToSpawn;
         public Transform parent;
         public GameObject Rouge;
