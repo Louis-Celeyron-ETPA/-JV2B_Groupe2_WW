@@ -10,51 +10,94 @@ public class PlayerControls: MonoBehaviour
     public KeyCode GoLeft;
     public KeyCode GoRight;
 
-    public int speed;
+    public float speed;
+    public float directionX;
+    public float directionY;
+
+    public bool isMoving;
+
+   
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKey(GoUp) )
+        if (Input.GetKey(GoUp) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+        {
+            directionY += 5f;
+
+            speed = 2f;
+
+            isMoving = true;
+        }
+
+        else if (Input.GetKey(GoDown) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+        {
+            directionY -= 5f;
+
+            speed = 2f;
+
+            isMoving = true;
+        }
+        else if (Input.GetKey(GoLeft) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+        {
+
+            directionX -= 5f;
+            speed = 2f;
+
+            isMoving = true;
+        }
+
+        else if (Input.GetKey(GoRight) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+        {
+            directionX += 5f;
+            speed = 2f;
+            isMoving = true;
+        }
+
+        rgb.velocity = new Vector2(directionX, directionY) * speed;
+
+        if (rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+
+        {
+            directionX = 0f;
+            directionY = 0f;
+            speed = 0f;
+        }
+
+        //if (speed > 0f && speed <= 2)
+
         //{
-
-        //    rgb.velocity = new Vector2(+0, +1);
-
+        //    SlowingDown();
+            
         //}
 
-        //else if (Input.GetKey(GoDown))
-        //{
 
-        //    rgb.velocity = new Vector2(+0, -1);
-
-        //}
-        //else if (Input.GetKey(GoLeft))
-        //{
-
-        //    rgb.velocity = new Vector2(-1, +0);
-
-        //}
-
-        //else if (Input.GetKey(GoRight))
-        //{
-
-        //    rgb.velocity = new Vector2(+1, +0);
-
-        //}
-
-        //else if (Input.GetKeyUp(GoUp) && Input.GetKeyUp(GoDown) && Input.GetKeyUp(GoLeft) && Input.GetKeyUp(GoRight) )
-        //{
-
-        //    rgb.velocity = new Vector2(+0, +0);
-
-        //}
 
         
+    }
+
+    public void SlowingDown()
+    {
+
+        speed -= 0.02f;
+
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.gameObject.tag == "Obstacle")
+        {
+            directionX = 0f;
+            directionY = 0f;
+            speed = 0f;
+        }
+
     }
 }
