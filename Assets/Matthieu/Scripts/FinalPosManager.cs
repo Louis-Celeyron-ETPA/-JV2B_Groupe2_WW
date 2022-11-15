@@ -10,6 +10,7 @@ public class FinalPosManager : MonoBehaviour
     public List<Vector3> finalPositions; 
     void Start()
     {
+        
         finalPositions = new List<Vector3>(); 
         for (int i = 0; i < 3; i++)
         {
@@ -18,9 +19,6 @@ public class FinalPosManager : MonoBehaviour
             positions.RemoveAt(index); 
         }
 
-        Debug.Log(finalPositions[0]); 
-        Debug.Log(finalPositions[1]); 
-        Debug.Log(finalPositions[2]); 
         
     }
 
