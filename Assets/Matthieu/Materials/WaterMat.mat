@@ -32,12 +32,13 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _FlowSpeed: 0.01
-    - _FlowStrength: 0.005
-    - _Size: 2.31
+    - _FlowSpeed: 0.02
+    - _FlowStrength: 0.004
+    - _FoamDistance: 1.5
+    - _Size: 2.26
     m_Colors:
-    - _DarkFoamColor: {r: 0.13616945, g: 0.29438478, b: 0.5660378, a: 1}
-    - _LightFoamColor: {r: 1, g: 1, b: 1, a: 0}
+    - _DarkFoamColor: {r: 0.17065683, g: 0.31228873, b: 0.5566038, a: 1}
+    - _LightFoamColor: {r: 0.8443396, g: 0.96407837, b: 1, a: 0}
     - _WaterColor: {r: 0, g: 0.42760098, b: 0.7075472, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5142559228398278602
