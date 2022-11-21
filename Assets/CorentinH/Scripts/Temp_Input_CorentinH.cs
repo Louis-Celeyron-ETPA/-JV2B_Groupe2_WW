@@ -23,7 +23,7 @@ namespace HARDYCorentin{
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.position = new Vector3(player.transform.position.x + playermoveright, 0f);
+                transform.position = new Vector3(player.transform.position.x + playermoveright, /*Camera.main.farClipPlane*/ 0f);
                 Debug.Log("B");
             }
             //else if ()
