@@ -54,30 +54,30 @@ public class selection : MonoBehaviour
 
         if (hatBool == true)
         {
-            var myObject = Instantiate(Yes, new Vector2(7.46f, 2.56f), Quaternion.identity);
+            var myObject = Instantiate(Yes, new Vector3(7.7f, 2.56f, -9), Quaternion.identity);
 
         }
         else
         {
-            var myObject = Instantiate(No, new Vector2(7.46f, 2.56f), Quaternion.identity);
+            var myObject = Instantiate(No, new Vector3(7.7f, 2.56f, -9), Quaternion.identity);
         }
         if (tieBool == true)
         {
-            var myObject = Instantiate(Yes, new Vector2(7.22f, 0.58f), Quaternion.identity);
+            var myObject = Instantiate(Yes, new Vector3(7.1f, 0.58f, -9), Quaternion.identity);
 
         }
         else
         {
-            var myObject = Instantiate(No, new Vector2(7.22f, 0.58f), Quaternion.identity);
+            var myObject = Instantiate(No, new Vector3(7.1f, 0.58f, -9), Quaternion.identity);
         }
         if (tallBool == true)
         {
-            var myObject = Instantiate(Yes, new Vector2(7.4f, -1.52f), Quaternion.identity);
+            var myObject = Instantiate(Yes, new Vector3(6.9f, -1.52f, -9), Quaternion.identity);
 
         }
         else
         {
-            var myObject = Instantiate(No, new Vector2(7.4f, -1.52f), Quaternion.identity);
+            var myObject = Instantiate(No, new Vector3(6.9f, -1.52f,-9), Quaternion.identity);
         }
     }
 
