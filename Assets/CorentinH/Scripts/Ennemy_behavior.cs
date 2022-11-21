@@ -36,9 +36,11 @@ namespace HARDYCorentin
                 if (ennemy.transform.position.x == 0)
                 {
                     transform.position =new Vector3(ennemy.transform.position.x + stayput, 0f);
-                    Debug.Log("C");
+                    Debug.Log("You lost.");
+
                 }
             }
+
         }
     }
 }
