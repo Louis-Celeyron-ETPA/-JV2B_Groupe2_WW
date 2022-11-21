@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Cursor : MonoBehaviour
 {
+    public GameObject carre;
+    public float carreMoveLeft = -10f;
+    public float carreMoveRight = 10f;
+    public float carreMoveUp = 10f;
+    public float carreMoveDown = -10f;
     public RectTransform myRectTreansform;
     // Start is called before the first frame update
     void Start()
@@ -14,25 +19,39 @@ public class Cursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+ 
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            ;
-            var positionTemporaire = new Vector3(
-                myRectTreansform.anchoredPosition.x / Camera.main.pixelWidth,
-                myRectTreansform.anchoredPosition.y / Camera.main.pixelHeight * -1,
-                Camera.main.nearClipPlane);
-            var convertedPosition = Camera.main.ViewportToWorldPoint(positionTemporaire);
-
-            var positionDansLeMonde = new Vector3(convertedPosition.x, -convertedPosition.y, convertedPosition.z);
-
-            if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info))
-            {
-                var RandomMouvement = info.transform.GetComponent<RandomMouvement>();
-                if (RandomMouvement != null)
-                {
-                    Debug.Log(RandomMouvement);
-                }
-            }
+            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft, carre.transform.position.y, 0f);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position = new Vector3(carre.transform.position.x + carreMoveRight, carre.transform.position.y, 0f);
+        }
+        else if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.position = new Vector3(carre.transform.position.x, carre.transform.position.y + carreMoveUp, 0f);
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.position = new Vector3(carre.transform.position.x, carre.transform.position.y + carreMoveDown, 0f);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) & Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft / 2, carre.transform.position.y + carreMoveUp / 2, 0f);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) & Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft / 2, carre.transform.position.y + carreMoveDown / 2, 0f);
+        }
+        if (Input.GetKey(KeyCode.RightArrow) & Input.GetKey(KeyCode.UpArrow)) 
+        {
+            transform.position = new Vector3(carre.transform.position.x + carreMoveRight / 2, carre.transform.position.y + carreMoveUp / 2, 0f);
+        }
+        if (Input.GetKey(KeyCode.RightArrow) & Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.position = new Vector3(carre.transform.position.x + carreMoveRight / 2, carre.transform.position.y + carreMoveDown / 2, 0f);
         }
     }
+    
 }

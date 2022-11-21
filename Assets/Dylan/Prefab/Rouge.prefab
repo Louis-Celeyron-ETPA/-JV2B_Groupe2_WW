@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2005272051476938138}
   - component: {fileID: 168156471591947371}
   - component: {fileID: 5591758269932042470}
-  - component: {fileID: -6576773212229488747}
-  - component: {fileID: 1738260051072707149}
+  - component: {fileID: 899269157197138292}
+  - component: {fileID: -8779092487726672964}
   m_Layer: 0
   m_Name: Rouge
   m_TagString: Untagged
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dde541e5863a0d747bb81f6573572255, type: 3}
+  m_Color: {r: 0.8018868, g: 0.15508187, b: 0.15508187, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   maxY: 2
   movementSpeed: 2
   newPositionWaitTime: 0
---- !u!65 &-6576773212229488747
+--- !u!65 &899269157197138292
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,9 +116,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1738260051072707149
+--- !u!54 &-8779092487726672964
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
