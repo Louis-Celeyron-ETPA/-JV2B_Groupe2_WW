@@ -119,6 +119,23 @@ namespace SebastienMiniGame2
             
 
         }
+
+        public void OnTriggerEnter2D(Collider2D collision)
+        {
+
+            if (collision.transform.gameObject.tag == "Danger")
+            {
+                directionX = 0f;
+                directionY = 0f;
+                speed = 0f;
+                isMoving = false;
+                Debug.Log("Aïe!");
+            }
+
+            
+
+
+        }
     }
 
 
