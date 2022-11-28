@@ -6,12 +6,10 @@ namespace Dylan
 
     public class DragAndDrop : MonoBehaviour
 
+        
+
     {
-        public float curseurMoveLeft;
-        public float curseurMoveRight;
-        public float curseurMoveUp = 1f;
-        public float curseurMoveDown;
-        public GameObject curseur;
+        public GameObject cube ;
         // Start is called before the first frame update
         void Start()
         {
@@ -21,15 +19,9 @@ namespace Dylan
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                transform.position = new Vector3(0f, curseur.transform.position.y + curseurMoveUp);
-                Debug.Log("A");
-            }
+            if(Physics.Raycast(Vector3.zero,Vector3.back))
+            Debug.DrawRay(cube.transform.position, Vector3.back * 8000);
         }
-        private void OnMouseDown()
-        {
-
-        }
+       
     }
 }
