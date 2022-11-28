@@ -11,6 +11,7 @@ namespace SebastienMiniGame2
         public GameObject level2Tile;
         public GameObject level3Tile;
         public GameObject level4Tile;
+        public GameObject level5Tile;
 
 
 
@@ -26,13 +27,14 @@ namespace SebastienMiniGame2
             level2Tile.SetActive(false);
             level3Tile.SetActive(false);
             level4Tile.SetActive(false);
+            level5Tile.SetActive(false);
 
             //level1Tile.SetActive(false);
 
             if (levelChosen == 0)
             {
-                //levelChosen = Random.Range(1, 4);
-                levelChosen = 4;
+            //    levelChosen = Random.Range(1, 5);
+                levelChosen = 5;
                 // random.range(min inclusive, max EXCLUSIVE)
 
             }
@@ -50,6 +52,8 @@ namespace SebastienMiniGame2
                 level2Tile.SetActive(false);
                 level3Tile.SetActive(false);
                 level4Tile.SetActive(false);
+                level5Tile.SetActive(false);
+
 
 
 
@@ -69,6 +73,7 @@ namespace SebastienMiniGame2
                 level2Tile.SetActive(true);
                 level3Tile.SetActive(false);
                 level4Tile.SetActive(false);
+                level5Tile.SetActive(false);
 
 
                 Debug.Log(levelChosen);
@@ -87,6 +92,7 @@ namespace SebastienMiniGame2
                 level2Tile.SetActive(false);
                 level3Tile.SetActive(true);
                 level4Tile.SetActive(false);
+                level5Tile.SetActive(false);
 
 
                 Debug.Log(levelChosen);
@@ -105,14 +111,34 @@ namespace SebastienMiniGame2
                 level2Tile.SetActive(false);
                 level3Tile.SetActive(false);
                 level4Tile.SetActive(true);
+                level5Tile.SetActive(false);
 
 
                 Debug.Log(levelChosen);
 
                 levelChosen = 0;
 
-                playerInstance.player.transform.position = new Vector3(7f, -3f, 1.5f);
-                victoryGoalInstance.victoryGoal.transform.position = new Vector3(2.2f, -4.2f, 1.4f);
+                playerInstance.player.transform.position = new Vector3(0f, 0.6f, 1.5f);
+                victoryGoalInstance.victoryGoal.transform.position = new Vector3(7.35f, 6.1f, 1.4f);
+                victoryGoalInstance.victoryGoal.transform.rotation = Quaternion.Euler(0, 0, -90);
+
+            }
+
+            if (levelChosen == 5)
+            {
+                level1Tile.SetActive(false);
+                level2Tile.SetActive(false);
+                level3Tile.SetActive(false);
+                level4Tile.SetActive(false);
+                level5Tile.SetActive(true);
+
+
+                Debug.Log(levelChosen);
+
+                levelChosen = 0;
+
+                playerInstance.player.transform.position = new Vector3(0f, -3.2f, 1.5f);
+                victoryGoalInstance.victoryGoal.transform.position = new Vector3(0.1f, 6.1f, 1.4f);
                 victoryGoalInstance.victoryGoal.transform.rotation = Quaternion.Euler(0, 0, -90);
 
             }
