@@ -11,16 +11,14 @@ public class Verif : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (var mat in FindObjectsOfType<Mat>())
+        for (int i = 0; i < 9; i++)
         {
-            if (mat.numcol == 1 )
+            var currentcolor = Listeboules[i].GetComponent<Mat>().numcol;
+            if (currentcolor == 1)
             {
                 totalvert = totalvert + 1;
             }
-            if (mat.numcol == 2)
-            {
-                totalvert = totalorange + 1;
-            }
+            Debug.Log(currentcolor);
         }
         Debug.Log(totalvert);
     }

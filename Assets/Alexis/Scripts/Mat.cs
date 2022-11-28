@@ -9,7 +9,7 @@ public class Mat : MonoBehaviour
     public MeshRenderer mr;
     public int numcol = 0;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         numcol = Random.Range(1, 3);
         if (numcol==1)
