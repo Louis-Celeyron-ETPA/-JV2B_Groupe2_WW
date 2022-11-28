@@ -13,15 +13,15 @@ public class carCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && gameObject.transform.position.y < 3)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && gameObject.transform.position.y < 2)
         {
-            gameObject.transform.Translate(Vector3.up * 2f);
+            gameObject.transform.Translate(Vector3.left * 2f);
         }
         
 
         if (Input.GetKeyDown(KeyCode.DownArrow) && gameObject.transform.position.y > -1)
         {
-            gameObject.transform.Translate(Vector3.down * 2f);
+            gameObject.transform.Translate(Vector3.right * 2f);
         }
 
     }
