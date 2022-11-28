@@ -22,7 +22,7 @@ namespace HARDYCorentin
             if (Input.GetKey(KeyCode.RightArrow))
                 Debug.DrawRay(player.transform.position, player.transform.right * 5f);
             {
-                if (Physics.Raycast(player.transform.position, player.transform.right, out var other, 5f) & Input.GetKey(KeyCode.Space))
+                if (Physics.Raycast(player.transform.position, player.transform.right, out var other, 5f) & Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.RightArrow))
                 {
                     Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
                     
@@ -33,7 +33,7 @@ namespace HARDYCorentin
             if (Input.GetKey(KeyCode.LeftArrow))
                 Debug.DrawRay(player.transform.position, player.transform.right * -5f);
             {
-                if(Physics.Raycast(player.transform.position, -player.transform.right, out var other, 5f) & Input.GetKey(KeyCode.Space))
+                if(Physics.Raycast(player.transform.position, -player.transform.right, out var other, 5f) & Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.LeftArrow))
                 {
                     Debug.Log("AAAAAAAAAAAAAAAAAAAA");
                     
