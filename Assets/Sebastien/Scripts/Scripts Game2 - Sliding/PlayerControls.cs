@@ -20,6 +20,8 @@ namespace SebastienMiniGame2
         public float directionY;
 
         public bool isMoving;
+        public bool trapdoorOpened = false;
+
 
 
         public bool victory = false;
@@ -84,8 +86,8 @@ namespace SebastienMiniGame2
             //    SlowingDown();
 
             //}
-
-
+            
+     
 
 
         }
@@ -114,6 +116,7 @@ namespace SebastienMiniGame2
                 collision.gameObject.SetActive(false);
                 Debug.Log("GG");
                 victory = true;
+                UnityEditor.EditorApplication.isPlaying = false;
 
             }
             
@@ -130,9 +133,9 @@ namespace SebastienMiniGame2
                 speed = 0f;
                 isMoving = false;
                 Debug.Log("Aïe!");
+                //Application.Quit();
+                UnityEditor.EditorApplication.isPlaying = false;
             }
-
-            
 
 
         }

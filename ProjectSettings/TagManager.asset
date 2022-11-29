@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - Danger
+  - Switch
+  - Trapdoor
   layers:
   - Default
   - TransparentFX
