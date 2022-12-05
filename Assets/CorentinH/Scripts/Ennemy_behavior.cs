@@ -45,9 +45,10 @@ namespace HARDYCorentin
                 
             }
 
-            if (ennemy.transform.position.x == 0)
+            if (ennemy.transform.position.x == 0 & ennemy.transform.position.y == 0)
                 {
-                    transform.position =new Vector3(ennemy.transform.position.x + stayput, 0f);
+                    transform.position =new Vector3(ennemy.transform.position.x + stayput, ennemy.transform.position.y + stayput, 0f);
+                    ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);  
                     Debug.Log("You lost.");
 
                 }

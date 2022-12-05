@@ -42,6 +42,7 @@ namespace HARDYCorentin
                 }
             if (countdown >= 10*difficulty)
                 {
+                    ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
                     Debug.Log ("HEY ! YOU WON");
                 } 
                 
