@@ -1279,7 +1279,7 @@ Camera:
   far clip plane: 1000
   field of view: 60.30509
   orthographic: 1
-  orthographic size: 10.02
+  orthographic size: 13.964394
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1303,7 +1303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492534335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 1.63, z: -16.38}
+  m_LocalPosition: {x: 0.21, y: 1.56, z: -19.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1344,10 +1344,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carre: {fileID: 1530136547}
-  carreMoveLeft: -0.4
-  carreMoveRight: 0.4
-  carreMoveUp: 0.4
-  carreMoveDown: -0.4
+  carreMoveLeft: -0.2
+  carreMoveRight: 0.2
+  carreMoveUp: 0.2
+  carreMoveDown: -0.2
   myRectTreansform: {fileID: 0}
 --- !u!65 &1530136549
 BoxCollider:

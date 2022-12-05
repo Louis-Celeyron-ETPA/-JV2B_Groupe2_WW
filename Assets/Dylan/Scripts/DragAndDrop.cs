@@ -5,9 +5,6 @@ namespace Dylan
 {
 
     public class DragAndDrop : MonoBehaviour
-
-        
-
     {
         public GameObject cube ;
         // Start is called before the first frame update
@@ -19,8 +16,19 @@ namespace Dylan
         // Update is called once per frame
         void Update()
         {
-            if(Physics.Raycast(Vector3.zero,Vector3.back))
-            Debug.DrawRay(cube.transform.position, Vector3.back * 8000);
+            if(Input.GetKey(KeyCode.Space))
+            {
+                if (Physics.BoxCast(cube.transform.position, Vector3.one / 2, Vector3.forward, out var objectHitted))
+                {
+                    if(objectHitted.collider.tag =="Cube")
+                    {
+                        Debug.Log(objectHitted.collider.gameObject);
+                        objectHitted.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y , objectHitted.transform.position.z);
+                    }
+                }
+
+            }
+
         }
        
     }

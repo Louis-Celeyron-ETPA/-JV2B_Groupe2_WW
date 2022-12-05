@@ -22,35 +22,35 @@ public class Cursor : MonoBehaviour
  
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft, carre.transform.position.y, 0f);
+            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft, carre.transform.position.y, 2f);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(carre.transform.position.x + carreMoveRight, carre.transform.position.y, 0f);
+            transform.position = new Vector3(carre.transform.position.x + carreMoveRight, carre.transform.position.y, 2f);
         }
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position = new Vector3(carre.transform.position.x, carre.transform.position.y + carreMoveUp, 0f);
+            transform.position = new Vector3(carre.transform.position.x, carre.transform.position.y + carreMoveUp, 2f);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position = new Vector3(carre.transform.position.x, carre.transform.position.y + carreMoveDown, 0f);
+            transform.position = new Vector3(carre.transform.position.x, carre.transform.position.y + carreMoveDown, 2f);
         }
         if (Input.GetKey(KeyCode.LeftArrow) & Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft / 2, carre.transform.position.y + carreMoveUp / 2, 0f);
+            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft / 2, carre.transform.position.y + carreMoveUp / 2, 2f);
         }
         if (Input.GetKey(KeyCode.LeftArrow) & Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft / 2, carre.transform.position.y + carreMoveDown / 2, 0f);
+            transform.position = new Vector3(carre.transform.position.x + carreMoveLeft / 2, carre.transform.position.y + carreMoveDown / 2, 2f);
         }
         if (Input.GetKey(KeyCode.RightArrow) & Input.GetKey(KeyCode.UpArrow)) 
         {
-            transform.position = new Vector3(carre.transform.position.x + carreMoveRight / 2, carre.transform.position.y + carreMoveUp / 2, 0f);
+            transform.position = new Vector3(carre.transform.position.x + carreMoveRight / 2, carre.transform.position.y + carreMoveUp / 2,2f);
         }
         if (Input.GetKey(KeyCode.RightArrow) & Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position = new Vector3(carre.transform.position.x + carreMoveRight / 2, carre.transform.position.y + carreMoveDown / 2, 0f);
+            transform.position = new Vector3(carre.transform.position.x + carreMoveRight / 2, carre.transform.position.y + carreMoveDown / 2, 2f);
         }
     }
     
