@@ -8,6 +8,7 @@ public class CarSpawning : MonoBehaviour
     public GameObject CarToSpawn2;
     public GameObject CarToSpawn3;
     public GameObject CarToSpawn;
+    public GameObject signalétique;
     public int nombreDeVoiture;
     public int i;
     private float time;
@@ -42,15 +43,16 @@ public class CarSpawning : MonoBehaviour
         { 
             if (time > 0.6f)
             {
+                var newObject = Instantiate(signalétique, new Vector3(8f, 1,13.8f), Quaternion.identity);
                 int randomPositonY = Random.Range(1, 4);
                 float carPositonY = 1f;
                 if (randomPositonY == 1)
                 {
-                    carPositonY = 3f;
+                    carPositonY = 2.6f;
                 }
                 else if (randomPositonY == 3)
                 {
-                    carPositonY = -1f;
+                    carPositonY = -0.6f;
                 }
                 else
                 {

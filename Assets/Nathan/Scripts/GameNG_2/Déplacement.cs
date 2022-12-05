@@ -17,20 +17,20 @@ public class Déplacement : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftArrow)){
-            rgbd.MovePosition((Vector2)transform.position + Vector2.left * 0.05f);
+            rgbd.MovePosition((Vector2)transform.position + Vector2.left * 0.08f);
 
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            rgbd.MovePosition((Vector2)transform.position + Vector2.right * 0.05f);
+            rgbd.MovePosition((Vector2)transform.position + Vector2.right * 0.08f);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            rgbd.MovePosition((Vector2)transform.position + Vector2.up * 0.05f);
+            rgbd.MovePosition((Vector2)transform.position + Vector2.up * 0.08f);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            rgbd.MovePosition((Vector2)transform.position + Vector2.down * 0.05f);
+            rgbd.MovePosition((Vector2)transform.position + Vector2.down * 0.08f);
         }
     }
 }

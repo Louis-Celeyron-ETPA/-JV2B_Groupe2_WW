@@ -15,13 +15,13 @@ public class carCode : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && gameObject.transform.position.y < 2)
         {
-            gameObject.transform.Translate(Vector3.left * 2f);
+            gameObject.transform.Translate(Vector3.left * 1.6f);
         }
         
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && gameObject.transform.position.y > -1)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && gameObject.transform.position.y > 0)
         {
-            gameObject.transform.Translate(Vector3.right * 2f);
+            gameObject.transform.Translate(Vector3.right * 1.6f);
         }
 
     }
@@ -29,6 +29,7 @@ public class carCode : MonoBehaviour
     {
         print("mort");
         Destroy(gameObject);
+        
     }
 
 
