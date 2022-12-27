@@ -891,6 +891,7 @@ MonoBehaviour:
   texte1: {fileID: 416587537}
   texte2: {fileID: 1607431933}
   texte3: {fileID: 1601649356}
+  canva: {fileID: 515774751}
 --- !u!1 &1492534335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,9 +1568,9 @@ MonoBehaviour:
     left:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1195700615}
-          m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_MethodName: 
+        - m_Target: {fileID: 1195700620}
+          m_TargetAssemblyTypeName: GenerCode, Assembly-CSharp
+          m_MethodName: CombiGauche
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1581,13 +1582,49 @@ MonoBehaviour:
           m_CallState: 2
     right:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1195700620}
+          m_TargetAssemblyTypeName: GenerCode, Assembly-CSharp
+          m_MethodName: CombiDroite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     down:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1195700620}
+          m_TargetAssemblyTypeName: GenerCode, Assembly-CSharp
+          m_MethodName: CombiBas
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     up:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1195700620}
+          m_TargetAssemblyTypeName: GenerCode, Assembly-CSharp
+          m_MethodName: CombiHaut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   pointsMorts:
     horizontal:
       m_PersistentCalls:
