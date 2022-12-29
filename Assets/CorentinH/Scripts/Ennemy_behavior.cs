@@ -33,13 +33,13 @@ namespace HARDYCorentin
                 transform.position =/* Camera.main.ScreenToWorldPoint(*/new Vector3(ennemy.transform.position.y + moveright * difficulty, 0f)/*)*/;
                 Debug.Log("A");
             }
-            if (ennemy.transform.position.x > 0)
+            else if (ennemy.transform.position.x > 0)
             {
                 transform.position = new Vector3(ennemy.transform.position.x + moveleft * difficulty, 0f);
                 Debug.Log("B");
             }
 
-            if (ennemy.transform.position.y > 0)
+            else if (ennemy.transform.position.y > 0)
             {
                 transform.position = new Vector3(ennemy.transform.position.y + moveleft * difficulty, 0f);
                 
