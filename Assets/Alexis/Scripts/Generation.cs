@@ -11,12 +11,14 @@ namespace Alexis
         private Color A = Color.cyan, B = Color.yellow, C = Color.magenta;
         bool aTourne = false;
         public List<GameObject> listeAssiette = new List<GameObject>();
+        public GameObject reference;
 
         // Start is called before the first frame update
 
         void Start()
         {
             Spawn();
+            
         }
         public void Spawn()
         {
@@ -25,22 +27,23 @@ namespace Alexis
                 for (int i = 0; i < 5; i++)
                 {
                     //var newObject = Instantiate(objetASpawner, new Vector2(0.0f, -6.23f), Quaternion.identity);
-                    var newObject = Instantiate(objetASpawner, new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)), Quaternion.identity);
+                    var newObject = Instantiate(objetASpawner, new Vector3(0,0,0), Quaternion.identity);
                     couleur = Random.Range(1, 3);
                     if (couleur == 1)
                     {
-                        newObject.GetComponent<Renderer>().material.color = A;
+                        newObject.GetComponent<MeshRenderer>().material.color = A;
                     }
                     if (couleur == 2)
                     {
-                        newObject.GetComponent<Renderer>().material.color = B;
+                        newObject.GetComponent<MeshRenderer>().material.color = B;
                     }
                     if (couleur == 3)
                     {
-                        newObject.GetComponent<Renderer>().material.color = C;
+                        newObject.GetComponent<MeshRenderer>().material.color = C;
                     }
                     listeAssiette.Add(newObject);
                 }
+                reference.GetComponent<Swipe>().liste = listeAssiette;
             }
 
             aTourne = true;
