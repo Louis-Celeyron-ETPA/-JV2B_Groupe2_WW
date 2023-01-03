@@ -18,11 +18,10 @@ namespace Dylan
         {
             if(Input.GetKey(KeyCode.Space))
             {
-                if (Physics.BoxCast(cube.transform.position, Vector3.one / 2, Vector3.forward, out var objectHitted))
+                if (Physics.BoxCast(cube.transform.position, Vector3.one/2, Vector3.forward/2, out var objectHitted))
                 {
                     if(objectHitted.collider.tag =="Cube")
                     {
-                        Debug.Log(objectHitted.collider.gameObject);
                         objectHitted.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y , objectHitted.transform.position.z);
                     }
                 }
@@ -30,6 +29,6 @@ namespace Dylan
             }
 
         }
-       
+
     }
 }

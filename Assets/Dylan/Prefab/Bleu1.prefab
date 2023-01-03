@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3857701019960591318}
   m_Layer: 0
   m_Name: Bleu1
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,8 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be16e6405e1cb5142a234cdc0ba44995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curseurMoveLeft: 0
-  curseurMoveRight: 0
-  curseurMoveUp: 1
-  curseurMoveDown: 0
-  curseur: {fileID: 0}
+  cube: {fileID: 0}
