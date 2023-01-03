@@ -200,7 +200,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 6090901892519449096, guid: b7305b07cdf8d6c41bde159f08594e70, type: 3}
   parent: {fileID: 45748822}
   minTime: 0
-  maxTime: 4
+  maxTime: 6
   currentTime: 0
 --- !u!4 &45748822 stripped
 Transform:
@@ -311,7 +311,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 6090901892519449096, guid: b7305b07cdf8d6c41bde159f08594e70, type: 3}
   parent: {fileID: 943404666}
   minTime: 0
-  maxTime: 4
+  maxTime: 6
   currentTime: 0
 --- !u!4 &943404666 stripped
 Transform:
@@ -338,7 +338,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 6090901892519449096, guid: b7305b07cdf8d6c41bde159f08594e70, type: 3}
   parent: {fileID: 960469794}
   minTime: 0
-  maxTime: 4
+  maxTime: 6
   currentTime: 0
 --- !u!4 &960469794 stripped
 Transform:

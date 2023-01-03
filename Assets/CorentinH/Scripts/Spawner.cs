@@ -7,9 +7,8 @@ public class Spawner : MonoBehaviour
     
     public GameObject objectToSpawn;
     public Transform parent;
-
     public float minTime = 0f;
-    public float maxTime = 4f;
+    public float maxTime;
     public float currentTime;
     // Start is called before the first frame update
     void Start()

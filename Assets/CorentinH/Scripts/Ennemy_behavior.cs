@@ -21,39 +21,43 @@ namespace HARDYCorentin
         void Update()
         {
 
-            
-            
-            if (ennemy.transform.position.x < 0)
-            {
-                transform.position =/* Camera.main.ScreenToWorldPoint(*/new Vector3(ennemy.transform.position.x + moveright*difficulty, 0f)/*)*/;
-                Debug.Log("A");
-            }
-            if (ennemy.transform.position.y < 0)
-            {
-                transform.position =/* Camera.main.ScreenToWorldPoint(*/new Vector3(ennemy.transform.position.y + moveright * difficulty, 0f)/*)*/;
-                Debug.Log("A");
-            }
-            else if (ennemy.transform.position.x > 0)
-            {
-                transform.position = new Vector3(ennemy.transform.position.x + moveleft * difficulty, 0f);
-                Debug.Log("B");
-            }
+            transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, moveright);
 
-            else if (ennemy.transform.position.y > 0)
-            {
-                transform.position = new Vector3(ennemy.transform.position.y + moveleft * difficulty, 0f);
-                
-            }
+            //if (ennemy.transform.position.x < 0)
+            //{
+            //    transform.position =new Vector3(ennemy.transform.position.x + moveright*difficulty, 0f);
+            //    Debug.Log("A");
+            //}
+            //if (ennemy.transform.position.y < 0)
+            //{
+            //    transform.position = new Vector3(ennemy.transform.position.y + moveright * difficulty, 0f);
+            //    Debug.Log("A");
+            //}
+            //else if (ennemy.transform.position.x > 0)
+            //{
+            //    transform.position = new Vector3(ennemy.transform.position.x + moveleft * difficulty, 0f);
+            //    Debug.Log("B");
+            //}
 
-            if (ennemy.transform.position.x == 0 & ennemy.transform.position.y == 0)
-                {
-                    transform.position =new Vector3(ennemy.transform.position.x + stayput, ennemy.transform.position.y + stayput, 0f);
-                    ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);  
-                    Debug.Log("You lost.");
+            //else if (ennemy.transform.position.y > 0)
+            //{
+            //    transform.position = new Vector3(ennemy.transform.position.y + moveleft * difficulty, 0f);
 
-                }
-            }
+            //}
 
+            //if (ennemy.transform.position.x == 0 & ennemy.transform.position.y == 0)
+            //    {
+            //        transform.position =new Vector3(ennemy.transform.position.x + stayput, ennemy.transform.position.y + stayput, 0f);
+            //        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);  
+            //        Debug.Log("You lost.");
+
+            //    }
+            //}
         }
-   }
+        private void OnCollisionEnter(Collision collision)
+        {
+            Destroy(gameObject);
+        }
+    }
+}
 
