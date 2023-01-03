@@ -19,22 +19,22 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(0.01f, 0);
+            transform.position += new Vector3(0.0025f, 0);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += new Vector3(0, -0.01f);
+            transform.position += new Vector3(0, -0.0025f);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3(-0.01f, 0);
+            transform.position += new Vector3(-0.0025f, 0);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += new Vector3(0, 0.01f);
+            transform.position += new Vector3(0, 0.0025f);
         }
         //transform.position = new Vector2(moveHorizontal * speed, moveVertical * speed);
 
