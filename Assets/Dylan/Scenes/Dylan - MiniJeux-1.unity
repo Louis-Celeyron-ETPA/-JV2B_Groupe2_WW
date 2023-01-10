@@ -329,8 +329,9 @@ GameObject:
   - component: {fileID: 13168017}
   - component: {fileID: 13168016}
   - component: {fileID: 13168015}
+  - component: {fileID: 13168018}
   m_Layer: 0
-  m_Name: Plane (7)
+  m_Name: Zone_Bleue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +360,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13168013}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10.69, y: 4.06, z: 10.69}
@@ -414,6 +415,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13168013}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &13168018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13168013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2310cdd14d0e5744bb25c94461addabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube: {fileID: 0}
+  Safe: {fileID: 0}
+  boxColor: {r: 0.14509805, g: 0.20392159, b: 0.74509805, a: 1}
+  nameToCheck: Bleu
 --- !u!1 &291063789
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,8 +682,9 @@ GameObject:
   - component: {fileID: 414908705}
   - component: {fileID: 414908704}
   - component: {fileID: 414908703}
+  - component: {fileID: 414908706}
   m_Layer: 0
-  m_Name: Plane (8)
+  m_Name: Zone_Rouge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -695,7 +713,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414908701}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10.69, y: 3.98, z: 10.69}
@@ -750,6 +768,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414908701}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &414908706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414908701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2310cdd14d0e5744bb25c94461addabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube: {fileID: 0}
+  Safe: {fileID: 0}
+  boxColor: {r: 0.8000001, g: 0.15686275, b: 0.15686275, a: 1}
+  nameToCheck: Rouge
 --- !u!1 &1143274197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,6 +1271,7 @@ GameObject:
   - component: {fileID: 1492534338}
   - component: {fileID: 1492534337}
   - component: {fileID: 1492534336}
+  - component: {fileID: 1492534339}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1310,6 +1345,108 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1492534339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492534335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directions:
+    left:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1530136548}
+          m_TargetAssemblyTypeName: Cursor, Assembly-CSharp
+          m_MethodName: MoveLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    right:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1530136548}
+          m_TargetAssemblyTypeName: Cursor, Assembly-CSharp
+          m_MethodName: MoveRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    down:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1530136548}
+          m_TargetAssemblyTypeName: Cursor, Assembly-CSharp
+          m_MethodName: MoveDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    up:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1530136548}
+          m_TargetAssemblyTypeName: Cursor, Assembly-CSharp
+          m_MethodName: MoveUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  pointsMorts:
+    horizontal:
+      m_PersistentCalls:
+        m_Calls: []
+    vertical:
+      m_PersistentCalls:
+        m_Calls: []
+  action:
+    onPressed:
+      m_PersistentCalls:
+        m_Calls: []
+    onUp:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1530136553}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onStayed:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1530136547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,6 +1576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be16e6405e1cb5142a234cdc0ba44995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DragDrop: 0
   cube: {fileID: 1530136547}
 --- !u!1 &1953133541
 GameObject:

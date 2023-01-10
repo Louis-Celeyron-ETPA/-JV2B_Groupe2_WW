@@ -8,6 +8,7 @@ namespace Dylan
      
 public class RandomMouvement : MonoBehaviour
 {
+
         private bool selectNewRandomPosition = true;
         private bool waitingForNewPosition = false;
         public float minX;
