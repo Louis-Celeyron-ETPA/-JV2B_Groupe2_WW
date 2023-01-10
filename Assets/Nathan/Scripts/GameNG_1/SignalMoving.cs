@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SignalMoving : MonoBehaviour
+namespace NatanG_minijeu1
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SignalMoving : MonoBehaviour
     {
-        
-    }
+        void Update()
+        {
+            //------------------------------------- Les signalitiques bougent
+            transform.position += new Vector3(-0.02f, 0);
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position += new Vector3(-0.02f, 0);
+            //------------------------------------- Boucle des signalitiques
+            if (transform.position.x <= -11)
+            {
+                transform.position += new Vector3(21, 0);
+            }
+        }
     }
 }

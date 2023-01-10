@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomInGame : MonoBehaviour
+namespace NatanG_minijeu2
 {
+
+    public class RandomInGame : MonoBehaviour
+{
+
     public GameObject Perso;
     public GameObject Sortie;
+    //------------------------------------- les murs random
     public GameObject mur1_1;
     public GameObject mur1_2;
     public GameObject mur1_3;
@@ -14,9 +19,9 @@ public class RandomInGame : MonoBehaviour
     public GameObject mur2_3;
 
 
-    // Start is called before the first frame update
     void Start()
-    {   
+    {
+        //------------------------------------- Random du perso
         int randomPositon = Random.Range(1, 4);
         if (randomPositon == 1)
         {
@@ -31,7 +36,7 @@ public class RandomInGame : MonoBehaviour
             Perso.transform.position = new Vector3(-2, -0.7f);
         }
 
-
+        //------------------------------------- Random des murs 1
         int porte_1 = Random.Range(1, 4);
         if (porte_1 == 1)
         {
@@ -46,6 +51,7 @@ public class RandomInGame : MonoBehaviour
             Destroy(mur1_3);
         }
 
+        //------------------------------------- Random des murs 2
         int porte_2 = Random.Range(1, 4);
         if (porte_2 == 1)
         {
@@ -60,7 +66,7 @@ public class RandomInGame : MonoBehaviour
             Destroy(mur2_3);
         }
 
-
+        //------------------------------------- Random de la sortie
         int randomPositonS = Random.Range(1, 4);
         if (randomPositonS == 1)
         {
@@ -76,7 +82,6 @@ public class RandomInGame : MonoBehaviour
         }
 
     }
-
-    // Update is called once per frame
+}
     
 }

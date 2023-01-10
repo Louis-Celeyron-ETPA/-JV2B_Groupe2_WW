@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class VisionDuJoueur : MonoBehaviour
+namespace NatanG_minijeu2
 {
-   
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class VisionDuJoueur : MonoBehaviour
     {
-        gameObject.GetComponent<Renderer>().enabled = false;
-    }
+        //------------------------------------- les ombres se révèlent
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            gameObject.GetComponent<Renderer>().enabled = false;
+        }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        gameObject.GetComponent<Renderer>().enabled = true;
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            gameObject.GetComponent<Renderer>().enabled = true;
+        }
     }
 }

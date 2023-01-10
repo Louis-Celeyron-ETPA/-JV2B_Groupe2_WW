@@ -2,27 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Victoire : MonoBehaviour
+namespace NatanG_minijeu2
 {
 
-    public GameObject Perso;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class Victoire : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public GameObject Perso;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        print("box box");
-        Perso.transform.position = new Vector3(7,0);
+        //------------------------------------- arriver dans la zone fait gagner
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Perso.transform.position = new Vector3(7, 0);
+            //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+        }
     }
 }

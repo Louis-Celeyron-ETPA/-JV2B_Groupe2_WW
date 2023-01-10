@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarMoving : MonoBehaviour
+namespace NatanG_minijeu1
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CarMoving : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position += new Vector3(-0.02f, 0); 
+        void Update()
+        {
+            //------------------------------------- Les voitures bougent
+            transform.position += new Vector3(-0.02f, 0);
+
+            //------------------------------------- Les voitures sont détruite quand elles sortent de l'écran
+            if (transform.position.x <= -11 && transform.position.y > -4)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
