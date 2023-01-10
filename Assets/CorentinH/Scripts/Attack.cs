@@ -8,7 +8,7 @@ namespace HARDYCorentin
     {
         public GameObject player;
         public float difficulty = 1f;
-        public int countdown = 0;
+        public Difficulty df;;
 
         // Start is called before the first frame update
         void Start()

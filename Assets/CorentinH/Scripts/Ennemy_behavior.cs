@@ -4,13 +4,14 @@ using UnityEngine;
 
 namespace HARDYCorentin
 {
-    public class Ennemy_behavior : MonoBehaviour
+    public class Ennemy_Behavior : MonoBehaviour
     {
         public GameObject ennemy;
         public float moveleft = -0.01f;
         public float moveright = 0.01f;
         public float stayput = 0f;
         public float difficulty = 1f;
+        public int loseCondition = 0;
         // Start is called before the first frame update
         void Start()
         {
@@ -23,36 +24,6 @@ namespace HARDYCorentin
 
             transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, moveright);
 
-            //if (ennemy.transform.position.x < 0)
-            //{
-            //    transform.position =new Vector3(ennemy.transform.position.x + moveright*difficulty, 0f);
-            //    Debug.Log("A");
-            //}
-            //if (ennemy.transform.position.y < 0)
-            //{
-            //    transform.position = new Vector3(ennemy.transform.position.y + moveright * difficulty, 0f);
-            //    Debug.Log("A");
-            //}
-            //else if (ennemy.transform.position.x > 0)
-            //{
-            //    transform.position = new Vector3(ennemy.transform.position.x + moveleft * difficulty, 0f);
-            //    Debug.Log("B");
-            //}
-
-            //else if (ennemy.transform.position.y > 0)
-            //{
-            //    transform.position = new Vector3(ennemy.transform.position.y + moveleft * difficulty, 0f);
-
-            //}
-
-            //if (ennemy.transform.position.x == 0 & ennemy.transform.position.y == 0)
-            //    {
-            //        transform.position =new Vector3(ennemy.transform.position.x + stayput, ennemy.transform.position.y + stayput, 0f);
-            //        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);  
-            //        Debug.Log("You lost.");
-
-            //    }
-            //}
         }
         private void OnCollisionEnter(Collision collision)
         {
