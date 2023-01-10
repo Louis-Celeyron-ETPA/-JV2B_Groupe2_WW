@@ -32,8 +32,8 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _FlowSpeed: 0.02
-    - _FlowStrength: 0.004
+    - _FlowSpeed: 0.03
+    - _FlowStrength: 0.007
     - _FoamDistance: 1.5
     - _Size: 2.26
     m_Colors:
