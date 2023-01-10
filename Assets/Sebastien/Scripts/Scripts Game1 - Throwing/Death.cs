@@ -24,11 +24,10 @@ namespace SebastienMiniGame1
         public BallInteraction thrownBall;
         public BallInteraction strengthBall;
 
-        // Start is called before the first frame update
         void Start()
         {
             livesLeft = 3;
-            
+
             Debug.Log(livesLeft + " vies restantes");
             //player.transform.position = new Vector2(initalX, initalY);
 
@@ -50,12 +49,12 @@ namespace SebastienMiniGame1
             if (collision.transform.gameObject.name == "Ball")
             {
                 isDead = true;
-                livesLeft -= 1;
+                livesLeft -= 1; // Perte d'une vie
                 Debug.Log(livesLeft + " vies restantes");
                 LifeLoss();
                 player.transform.position = new Vector2(initialX, initialY);
                 playerRgb.velocity = new Vector2(0, 0);
-                strengthBall.strength = 0f;
+                strengthBall.strength = 0f; // Reset force balle
             }
 
         }
@@ -84,9 +83,7 @@ namespace SebastienMiniGame1
             }
             else if (livesLeft == 0)
             {
-                lifeHUD1.SetActive(false);
-                lifeHUD2.SetActive(false);
-                lifeHUD3.SetActive(false);
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
             }
         }
 
@@ -94,6 +91,7 @@ namespace SebastienMiniGame1
         {
             isDead = false;
             thrownBall.isThrowing = false;
+
             
 
         }

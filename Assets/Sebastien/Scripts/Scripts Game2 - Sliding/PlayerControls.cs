@@ -10,6 +10,7 @@ namespace SebastienMiniGame2
         public GameObject victoryGoal;
 
         public Rigidbody2D rgb;
+
         public KeyCode GoUp;
         public KeyCode GoDown;
         public KeyCode GoLeft;
@@ -40,18 +41,14 @@ namespace SebastienMiniGame2
             if (Input.GetKey(GoUp) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
             {
                 directionY += 5f;
-
                 speed = 2f;
-
                 isMoving = true;
             }
 
             else if (Input.GetKey(GoDown) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
             {
                 directionY -= 5f;
-
                 speed = 2f;
-
                 isMoving = true;
             }
             else if (Input.GetKey(GoLeft) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
@@ -59,7 +56,6 @@ namespace SebastienMiniGame2
 
                 directionX -= 5f;
                 speed = 2f;
-
                 isMoving = true;
             }
 
@@ -79,16 +75,6 @@ namespace SebastienMiniGame2
                 directionY = 0f;
                 speed = 0f;
             }
-
-            //if (speed > 0f && speed <= 2)
-
-            //{
-            //    SlowingDown();
-
-            //}
-            
-     
-
 
         }
 
@@ -111,30 +97,33 @@ namespace SebastienMiniGame2
                 Debug.Log("Bonk!");
             }
 
-            else if (collision.transform.gameObject.name == "VictoryGoal")
+            else if (collision.transform.gameObject.name == "VictoryGoal") // Collision de victoire
             {
                 collision.gameObject.SetActive(false);
                 Debug.Log("GG");
                 victory = true;
-                UnityEditor.EditorApplication.isPlaying = false;
+
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
 
             }
-            
+
 
         }
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
 
-            if (collision.transform.gameObject.tag == "Danger")
+            if (collision.transform.gameObject.tag == "Danger") // Collision de défaite
             {
                 directionX = 0f;
                 directionY = 0f;
                 speed = 0f;
                 isMoving = false;
                 Debug.Log("Aïe!");
-                //Application.Quit();
-                UnityEditor.EditorApplication.isPlaying = false;
+                
+
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+
             }
 
 

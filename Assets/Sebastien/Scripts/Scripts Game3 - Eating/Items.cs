@@ -36,38 +36,8 @@ namespace SebastienMiniGame3 {
         // Start is called before the first frame update
         void Start()
         {
-            //difficulty = "Hard";
 
-            //if(difficulty == "Easy")
-            //{
-
-            //    InvokeRepeating("SpawnCake", 2f, 3f); // InvokeRepeating(fonction appell�e, temps de d�clenchement, r�p�tition x seconde)
-
-            //    InvokeRepeating("SpawnBomb", 5f, 2f);
-
-            //}
-
-            //else if (difficulty == "Medium")
-            //{
-
-            //    InvokeRepeating("SpawnCake", 2f, 2f); // InvokeRepeating(fonction appellée, temps de déclenchement, répétition x seconde)
-
-            //    InvokeRepeating("SpawnBomb", 4f, 1f);
-
-            //}
-
-            //else if (difficulty == "Hard")
-            //{
-
-            //    InvokeRepeating("SpawnCake", 2f, 1f); // InvokeRepeating(fonction appellée, temps de déclenchement, r�p�tition x seconde)
-
-            //    InvokeRepeating("SpawnBomb", 3f, 0.5f);
-
-            //}
-
-
-
-            InvokeRepeating("SpawnCake", 2f, 1f); // InvokeRepeating(fonction appellée, temps de déclenchement, r�p�tition x seconde)
+            InvokeRepeating("SpawnCake", 2f, 1f); // InvokeRepeating(fonction appellée, temps de déclenchement, répétition x seconde)
 
             InvokeRepeating("SpawnBomb", 3f, 0.5f);
 
@@ -93,6 +63,7 @@ namespace SebastienMiniGame3 {
 
             {
                 Victory();
+
             }
 
             scoreText.text = "À récupérer : " + requiredScore.ToString();
@@ -124,6 +95,8 @@ namespace SebastienMiniGame3 {
         {
             gameStart = false;
             outcomeText.text = "GG ma gueule";
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+
 
 
         }
@@ -133,6 +106,8 @@ namespace SebastienMiniGame3 {
             gameStart = false;
             //Debug.Log("T'es mort");
             outcomeText.text = "T'es nul";
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+
 
 
         }

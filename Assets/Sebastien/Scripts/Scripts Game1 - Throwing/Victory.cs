@@ -26,6 +26,7 @@ namespace SebastienMiniGame1
                 collisionGoal.gameObject.SetActive(false);
                 Debug.Log("GG");
                 victory = true;
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
 
             }
         }

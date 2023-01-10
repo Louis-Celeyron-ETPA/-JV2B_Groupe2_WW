@@ -34,8 +34,6 @@ namespace SebastienMiniGame2
             if (levelChosen == 0)
             {
                 levelChosen = Random.Range(1, 5);
-                //levelChosen = 5;
-                // random.range(min inclusive, max EXCLUSIVE)
 
             }
 
