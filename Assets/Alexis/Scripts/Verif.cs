@@ -28,75 +28,7 @@ public class Verif : MonoBehaviour
     {
 
     }
-    void Un()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Deux()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Trois()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Quatre()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Cinq()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Six()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Sept()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Huit()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Neuf()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
-    void Zero()
-    {
-        if (totalvert == 1)
-        {
-            Debug.Log("gagné");
-        }
-    }
+
+
 
 }
