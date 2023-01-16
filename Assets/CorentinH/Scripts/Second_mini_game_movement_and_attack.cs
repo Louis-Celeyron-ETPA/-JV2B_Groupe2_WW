@@ -57,10 +57,10 @@ namespace HARDYCorentin
             //Condition de victoire.
             if (winCondition >= 3*df.GetDifficulty())
             {
-                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success)
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
         }
-                
+        //Fonctions de contrôles pour les contrôles communs.  
         public void MoveLeft()
         {
             playablecharacter.transform.eulerAngles = new Vector3(0f, 0f, -90f);

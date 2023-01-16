@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace HARDYCorentin
 {
-    public class Ennemy_Behavior : MonoBehaviour
+    public class Ennemy_behavior : MonoBehaviour
     {
         public GameObject ennemy;
         public float moveleft = -0.01f;
         public float moveright = 0.01f;
         public float stayput = 0f;
-        public float difficulty = 1f;
+        public Difficulty df;
         public int loseCondition = 0;
         // Start is called before the first frame update
         void Start()
@@ -23,6 +23,15 @@ namespace HARDYCorentin
         {
 
             transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, moveright);
+            if(transform.position == Vector3.zero)
+            {
+                loseCondition = loseCondition + 1;
+                Destroy(gameObject);
+            }
+            if (loseCondition >= 6 / df.GetDifficulty())
+            {
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+            }
 
         }
         private void OnCollisionEnter(Collision collision)
