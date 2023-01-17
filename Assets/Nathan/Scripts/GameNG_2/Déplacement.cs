@@ -9,25 +9,21 @@ namespace NatanG_minijeu2
     {
         public Rigidbody2D rgbd;
 
-        void Update()
+        public void GoRight() // Aller à droite
         {
-            //------------------------------------- Le perso bouge
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                rgbd.MovePosition((Vector2)transform.position + Vector2.left * 0.08f);
-            }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                rgbd.MovePosition((Vector2)transform.position + Vector2.right * 0.08f);
-            }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                rgbd.MovePosition((Vector2)transform.position + Vector2.up * 0.08f);
-            }
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                rgbd.MovePosition((Vector2)transform.position + Vector2.down * 0.08f);
-            }
+            rgbd.MovePosition((Vector2)transform.position + Vector2.right * 0.08f);
+        }
+        public void GoLeft() // Aller à gauche
+        {
+            rgbd.MovePosition((Vector2)transform.position + Vector2.left * 0.08f);
+        }
+        public void GoUp() // Aller en haut
+        {
+            rgbd.MovePosition((Vector2)transform.position + Vector2.up * 0.08f);
+        }
+        public void GoDown() // Aller en bas
+        {
+            rgbd.MovePosition((Vector2)transform.position + Vector2.down * 0.08f);
         }
     }
 }

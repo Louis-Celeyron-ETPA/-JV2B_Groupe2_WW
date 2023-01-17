@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace NatanG_minijeu2
 {
-    public class defaite : MonoBehaviour
+    public class Defaite : MonoBehaviour
     {
         public GameObject Perso;
 

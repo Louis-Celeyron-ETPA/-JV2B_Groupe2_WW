@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace NatanG_minijeu3
 {
-    public class selection : MonoBehaviour
+    public class Selection : MonoBehaviour
 {
     public int placementSelection;
     public int NumTueur;
