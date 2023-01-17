@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HARDYCorentin
 {
-    public class Ennemy_behavior : MonoBehaviour
+    public class Ennemy_Behavior : MonoBehaviour
     {
         public GameObject ennemy;
         public float moveleft = -0.01f;
@@ -27,9 +27,11 @@ namespace HARDYCorentin
             {
                 loseCondition = loseCondition + 1;
                 Destroy(gameObject);
+                Debug.Log("Ouille.");
             }
-            if (loseCondition >= 6 / df.GetDifficulty())
+            if (loseCondition >= 6f / df.GetDifficulty())
             {
+                Debug.Log("TU SCHMOUTE BOYO");
                 ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
             }
 
