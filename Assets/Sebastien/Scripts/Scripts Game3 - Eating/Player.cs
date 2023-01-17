@@ -8,11 +8,14 @@ namespace SebastienMiniGame3 {
     public class Player : MonoBehaviour
     {
         public GameObject player;
+        private Rigidbody2D _rgb;
         public GameObject item;
         private SpriteRenderer _renderer;
-        private Animator anim;
+        private Animator _anim;
 
         public Items varStart;
+
+      
 
 
 
@@ -23,42 +26,51 @@ namespace SebastienMiniGame3 {
             player = this.gameObject;
             _renderer = GetComponent<SpriteRenderer>();
 
-            anim = gameObject.GetComponent<Animator>();
-            anim.Play("Running");
+            _anim = gameObject.GetComponent<Animator>();
+            _anim.Play("Running");
 
         }
 
         // Update is called once per frame
         void Update()
         {
+            MovePlayer();
 
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (varStart.gameStart && mousePosition.x > -8 && mousePosition.x < 8)
+            //if (varStart.gameStart && mousePosition.x > -8 && mousePosition.x < 8)
 
-            {
-                player.transform.position = new Vector2(mousePosition.x, -2.1f);
+            //{
+            //    player.transform.position = new Vector2(mousePosition.x, -2.1f);
 
-            }
-            
+            //}
 
 
-            if (mousePosition.x < 0 && varStart.gameStart)
 
-            {
-            _renderer.flipX = true;
-                
-            }
+            //if (mousePosition.x < 0 && varStart.gameStart)
 
-            else
-            {
+            //{
+            //_renderer.flipX = true;
 
-                _renderer.flipX = false;
+            //}
 
-            }
+            //else
+            //{
+
+            //    _renderer.flipX = false;
+
+            //}
         }
 
-    
-    }
+        public void MovePlayer(string direction)
+        {
+            _rgb.MovePosition(direction);
 
-}
+        }
+
+
+
+
+
+
+    }

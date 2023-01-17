@@ -38,20 +38,21 @@ namespace SebastienMiniGame2
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKey(GoUp) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+            if (Input.GetKeyDown(GoUp) && !isMoving)
             {
+
                 directionY += 5f;
                 speed = 2f;
                 isMoving = true;
             }
 
-            else if (Input.GetKey(GoDown) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+            else if (Input.GetKeyDown(GoDown) && !isMoving)
             {
                 directionY -= 5f;
                 speed = 2f;
                 isMoving = true;
             }
-            else if (Input.GetKey(GoLeft) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+            else if (Input.GetKeyDown(GoLeft) && !isMoving)
             {
 
                 directionX -= 5f;
@@ -59,7 +60,7 @@ namespace SebastienMiniGame2
                 isMoving = true;
             }
 
-            else if (Input.GetKey(GoRight) && rgb.velocity.x == 0f && rgb.velocity.y == 0f)
+            else if (Input.GetKeyDown(GoRight) && !isMoving)
             {
                 directionX += 5f;
                 speed = 2f;
@@ -68,12 +69,15 @@ namespace SebastienMiniGame2
 
             rgb.velocity = new Vector2(directionX, directionY) * speed;
 
+            
+            Debug.Log(isMoving);
             if (rgb.velocity.x == 0f && rgb.velocity.y == 0f)
 
             {
                 directionX = 0f;
                 directionY = 0f;
                 speed = 0f;
+                isMoving = false;
             }
 
         }
@@ -90,10 +94,11 @@ namespace SebastienMiniGame2
             
             if (collision.transform.gameObject.tag == "Obstacle")
             {
+                isMoving = false;
                 directionX = 0f;
                 directionY = 0f;
                 speed = 0f;
-                isMoving = false;
+                rgb.velocity = new Vector3(0,0,0);
                 Debug.Log("Bonk!");
             }
 
