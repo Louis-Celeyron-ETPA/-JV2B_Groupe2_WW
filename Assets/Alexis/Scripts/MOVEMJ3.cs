@@ -5,20 +5,27 @@ using UnityEngine.UI;
 
 public class MOVEMJ3 : MonoBehaviour
 {
-    public List<button> ListeBouttons;
-    public Button CurrentButton = ListeBouttons[0];
+    public List<Button> ListeBouttons;
+    public Button CurrentButton ;
     private int index_boutton;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        CurrentButton = ListeBouttons[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Change_Boutton_Haut();
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Change_Boutton_Down();
+        }
     }
 
  void Change_Boutton_Haut()
@@ -26,7 +33,9 @@ public class MOVEMJ3 : MonoBehaviour
         while (index_boutton < 8) 
         {
             CurrentButton = ListeBouttons[index_boutton + 1];
-            CurrentButton.High
+            ColorBlock colorVar = CurrentButton.colors;
+            colorVar.highlightedColor = new Color(255, 0, 0);
+            CurrentButton.colors = colorVar;
                 }
         
     }
