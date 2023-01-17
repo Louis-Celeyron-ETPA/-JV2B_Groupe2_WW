@@ -8,35 +8,39 @@ namespace CorentinB_Game1
     {
         //public Rigibody2D rgbd;
         public float Speed = 10f;
+        public bool verticalAxisUsed;
 
-        // Start is called before the first frame update
-        void Start()
+        void Update()
         {
-
+            transform.position += new Vector3(0, 0.007f);
         }
 
-        // Update is called once per frame
-        void Update()
+
+        //----------------------------------------------------------------------------------------
+
+
+
+        public void MoveFuseeLeft()
         {
 
             if (transform.position.x >= -5.17f)
             {
-                if (Input.GetKey(KeyCode.LeftArrow))
-                {
-                    //if (Input.GetKeyDown(KeyCode.LeftArrow)) transform.Translate(new Vector2(-1, 0));
-                    transform.position += new Vector3(-0.007f, 0);
-                }
+                //transform.position += new Vector3(-0.007f, 0);
+                transform.position += Vector3.left * 0.007f;
             }
+        }
+        public void MoveFuseeRight()
+        {
+
             if (transform.position.x <= 5.22f)
             {
 
-                if (Input.GetKey(KeyCode.RightArrow))
-                {
-                    //if (Input.GetKeyDown(KeyCode.RightArrow)) transform.Translate(new Vector2(1, 0));
-                    transform.position += new Vector3(0.007f, 0);
-                }
+                transform.position += new Vector3(0.007f, 0);
             }
-            transform.position += new Vector3(0, 0.007f);
+        }
+        public void Reset()
+        {
+            verticalAxisUsed = false;
         }
     }
 }
