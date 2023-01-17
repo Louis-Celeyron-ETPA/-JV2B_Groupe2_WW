@@ -6,7 +6,7 @@ namespace Dylan
 
     public class DragAndDrop : MonoBehaviour
     {
-        public bool DragDrop;
+        private bool DragDrop;
         public GameObject cube;
         // Start is called before the first frame update
         void Start()

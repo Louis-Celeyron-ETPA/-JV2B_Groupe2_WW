@@ -10,7 +10,7 @@ namespace Dylan
     {
         public GameObject Cube;
         public GameObject Safe;
-        public Color boxColor = Color.cyan;
+        private Color boxColor = Color.cyan;
 
         public string nameToCheck;
         // Start is called before the first frame update

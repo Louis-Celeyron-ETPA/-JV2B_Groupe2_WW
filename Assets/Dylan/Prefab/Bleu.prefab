@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 337111951134115707}
   - component: {fileID: -884028578974963233}
   - component: {fileID: 6763038209071814201}
+  - component: {fileID: 4617862999227830173}
   m_Layer: 0
   m_Name: Bleu
   m_TagString: Cube
@@ -99,7 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433a3470af60ff442b5835e0e3ea0615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagColor: Bleu
   minX: -5
   maxX: 5
   minY: -5
@@ -135,3 +135,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &4617862999227830173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936095568174345178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fea68f68fe006d408f7ef003dffe705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube: {fileID: 936095568174345178}
+  minTime: 0
+  maxTime: 0
+  currentTime: 0
+  timeRemaining: 15

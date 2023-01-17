@@ -5,7 +5,7 @@ namespace Dylan
 {
     public class Spawner : MonoBehaviour
     {
-        public float spawnPositionZ = 0.01f;
+        private float spawnPositionZ = 0.01f;
         public GameObject objectToSpawn;
         public Transform parent;
         public GameObject Rouge;
@@ -14,12 +14,7 @@ namespace Dylan
         public float minTime, maxTime;
         public float currentTime;
         // Start is called before the first frame update
-        void Start()
-        {
 
-        }
-
-        // Update is called once per frame
         void Update()
         {
             currentTime -= Time.deltaTime;
@@ -28,6 +23,9 @@ namespace Dylan
                 Instantiate(objectToSpawn, parent);
                 currentTime = Random.Range(minTime, maxTime);
             }
+
+
         }
     }
 }
+
