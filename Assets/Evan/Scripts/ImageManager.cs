@@ -14,6 +14,7 @@ namespace Evan
         // Start is called before the first frame update
         void Start()
         {
+            // Choisis un bouton au hasard pour changer sa couleur
             var buttonSelected = images[Random.Range(0, images.Count)];
             buttonSelected.spriteState = ss;
             (buttonSelected.targetGraphic as Image).sprite= dSprite;

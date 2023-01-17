@@ -27,6 +27,7 @@ namespace Evan
 
         public void ImageChange()
         {
+            // Permet de placer la frame de bouton pressé si il y a un click
             if (spriteNew)
             {
                 spriteNew = false;
