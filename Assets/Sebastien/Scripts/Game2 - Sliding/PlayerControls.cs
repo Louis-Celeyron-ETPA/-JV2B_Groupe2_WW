@@ -11,7 +11,7 @@ namespace SebastienMiniGame2
 
         public Rigidbody2D rgb;
 
-        public KeyCode GoUp;
+        public KeyCode GoUp; //Test sur PC
         public KeyCode GoDown;
         public KeyCode GoLeft;
         public KeyCode GoRight;
@@ -38,34 +38,27 @@ namespace SebastienMiniGame2
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(GoUp) && !isMoving)
+            if (Input.GetKeyDown(GoUp))
             {
-
-                directionY += 5f;
-                speed = 2f;
-                isMoving = true;
+                DirectionPlayerUp();
             }
 
-            else if (Input.GetKeyDown(GoDown) && !isMoving)
+            else if (Input.GetKeyDown(GoDown))
             {
-                directionY -= 5f;
-                speed = 2f;
-                isMoving = true;
+                DirectionPlayerDown();
             }
-            else if (Input.GetKeyDown(GoLeft) && !isMoving)
+            else if (Input.GetKeyDown(GoLeft))
             {
 
-                directionX -= 5f;
-                speed = 2f;
-                isMoving = true;
+                DirectionPlayerLeft();
             }
 
-            else if (Input.GetKeyDown(GoRight) && !isMoving)
+            else if (Input.GetKeyDown(GoRight))
             {
-                directionX += 5f;
-                speed = 2f;
-                isMoving = true;
+                DirectionPlayerRight();
             }
+
+
 
             rgb.velocity = new Vector2(directionX, directionY) * speed;
 
@@ -133,7 +126,59 @@ namespace SebastienMiniGame2
 
 
         }
+
+        public void DirectionPlayerUp()
+
+        {
+            if (!isMoving)
+            {
+                directionY += 5f;
+                speed = 2f;
+                isMoving = true;
+            }
+
+        }
+
+        public void DirectionPlayerDown()
+
+        {
+            if (!isMoving)
+            {
+                directionY -= 5f;
+                speed = 2f;
+                isMoving = true;
+            }
+
+        }
+
+        public void DirectionPlayerLeft()
+
+        {
+            if (!isMoving)
+            {
+                directionX -= 5f;
+                speed = 2f;
+                isMoving = true;
+            }
+
+        }
+
+        public void DirectionPlayerRight()
+
+        {
+            if (!isMoving)
+            {
+                directionX += 5f;
+                speed = 2f;
+                isMoving = true;
+            }
+
+        }
+
+
     }
 
-
 }
+
+
+

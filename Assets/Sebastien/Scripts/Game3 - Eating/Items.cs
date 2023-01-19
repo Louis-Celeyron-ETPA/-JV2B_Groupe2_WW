@@ -66,7 +66,7 @@ namespace SebastienMiniGame3 {
 
             }
 
-            scoreText.text = "À récupérer : " + requiredScore.ToString();
+            scoreText.text = "Required to Eat : " + requiredScore.ToString();
 
            
 
@@ -94,7 +94,9 @@ namespace SebastienMiniGame3 {
         public void Victory()
         {
             gameStart = false;
-            outcomeText.text = "GG ma gueule";
+            //Debug.Log("GG ma gueule");
+
+            outcomeText.text = "GG";
             ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
 
 

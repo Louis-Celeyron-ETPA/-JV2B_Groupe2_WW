@@ -8,9 +8,9 @@ namespace SebastienMiniGame1
 {
     public class BallInteraction : MonoBehaviour
     {
-        public KeyCode mainKey;
+        public KeyCode actionKey; 
         public float strength;
-        public float strengthMax = 10f;
+        public float strengthMax = 100f;
 
         Rigidbody2D rb;
         public Scrollbar scrollbar;
@@ -33,31 +33,20 @@ namespace SebastienMiniGame1
             // Strength minimum = 0
             // Strength maximum (capée pour ne pas envoyer la balle trop loin) = 8
 
-            if (Input.GetKey(mainKey) && isThrowing == false && strength < 10f)
+
+
+            if (Input.GetKey(actionKey))
             {
 
-                strength += 0.1f;
-
-
-            }
-
-            else if (Input.GetKey(mainKey) && isThrowing == false && strength >= 10f)
-            {
-
-                strength -= 0.1f;
-
+                ThrowingHoldButton(); // Pour tester sur PC
 
             }
 
 
-
-            else if (Input.GetKeyUp(mainKey) && isThrowing == false)
+            else if (Input.GetKeyUp(actionKey))
             {
 
-                rb.AddForce(transform.right * strength, ForceMode2D.Impulse);
-                rb.AddForce(transform.up * strength, ForceMode2D.Impulse);
-                isThrowing = true;
-
+                ThrowingUpButton(); // Rien à voir avec le vomi
             }
 
 
@@ -68,9 +57,29 @@ namespace SebastienMiniGame1
             }
 
 
-
             scrollbar.size = strength / strengthMax;
 
+        }
+
+        public void ThrowingHoldButton()
+        {
+
+            if (isThrowing == false && strength < 10f)
+            {
+
+                strength += 0.01f;
+
+            }
+
+
+        }
+
+        public void ThrowingUpButton()
+        {
+
+            rb.AddForce(transform.right * strength, ForceMode2D.Impulse);
+            rb.AddForce(transform.up * strength, ForceMode2D.Impulse);
+            isThrowing = true;
 
 
         }
