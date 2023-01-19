@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4983327026786323346}
   - component: {fileID: 6293628173190049616}
   - component: {fileID: 6293628173190049623}
-  - component: {fileID: 8784338493860182494}
+  - component: {fileID: 3191908533906768417}
   m_Layer: 0
   m_Name: stand_in_ennemy_01
   m_TagString: Untagged
@@ -116,7 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8784338493860182494
+--- !u!114 &3191908533906768417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
