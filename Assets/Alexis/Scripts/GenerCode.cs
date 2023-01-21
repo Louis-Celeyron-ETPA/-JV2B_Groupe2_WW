@@ -10,16 +10,21 @@ public class GenerCode : MonoBehaviour
     public string nomTouche;
     public List<int> combiBase = new List<int>();
     public List<int> combiRepro = new List<int>();
-    public TextMeshProUGUI texte1;
-    public TextMeshProUGUI texte2;
-    public TextMeshProUGUI texte3;
+    public List<TextMeshProUGUI> listeTexte = new List<TextMeshProUGUI>();
+
     private int indexCombi = 0;
     public GameObject canva;
     private bool valide = false;
+    private int dif = 3;
+
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 7; i++)
+        {
+            listeTexte[i].SetActive(false);
+        }
+        for (int i = 0; i < dif; i++)
         {
             touche = Random.Range(1, 4);
             combiBase.Add(touche);
@@ -39,18 +44,8 @@ public class GenerCode : MonoBehaviour
             {
                 nomTouche = "Gauche";
             }
-            if (i==0)
-            {
-                texte1.text= nomTouche;
-            }
-            if (i == 1)
-            {
-                texte2.text = nomTouche;
-            }
-            if (i == 2)
-            {
-                texte3.text = nomTouche;
-            }
+            listeTexte[i].text.SetActive(true);
+            listeTexte[i].text = nomTouche;
         }
         print(combiBase);
     }
