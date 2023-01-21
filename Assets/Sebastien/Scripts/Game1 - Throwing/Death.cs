@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 
 namespace SebastienMiniGame1
@@ -10,6 +12,7 @@ namespace SebastienMiniGame1
 
         public bool isDead = false;
         public int livesLeft = 3;
+        public Text livesLeftDisplay;
 
         public GameObject lifeHUD1;
         public GameObject lifeHUD2;
@@ -27,7 +30,7 @@ namespace SebastienMiniGame1
         void Start()
         {
             livesLeft = 3;
-
+            livesLeftDisplay.text = "Balls Left : " + livesLeft;
             Debug.Log(livesLeft + " vies restantes");
             //player.transform.position = new Vector2(initalX, initalY);
 
@@ -41,6 +44,7 @@ namespace SebastienMiniGame1
                 Respawn();
             }
 
+            LifeLoss(); //Check constamment le nombre de vies
 
         }
 
@@ -50,8 +54,9 @@ namespace SebastienMiniGame1
             {
                 isDead = true;
                 livesLeft -= 1; // Perte d'une vie
+                livesLeftDisplay.text = "Balls Left : " + livesLeft;
+
                 Debug.Log(livesLeft + " vies restantes");
-                LifeLoss();
                 player.transform.position = new Vector2(initialX, initialY);
                 playerRgb.velocity = new Vector2(0, 0);
                 strengthBall.strength = 0f; // Reset force balle
@@ -66,18 +71,18 @@ namespace SebastienMiniGame1
             {
                 lifeHUD1.SetActive(true);
                 lifeHUD2.SetActive(true);
-                lifeHUD3.SetActive(true);
+                lifeHUD3.SetActive(false);
             }
             else if (livesLeft == 2)
             {
                 lifeHUD1.SetActive(true);
-                lifeHUD2.SetActive(true);
+                lifeHUD2.SetActive(false);
                 lifeHUD3.SetActive(false);
             }
 
             else if (livesLeft == 1)
             {
-                lifeHUD1.SetActive(true);
+                lifeHUD1.SetActive(false);
                 lifeHUD2.SetActive(false);
                 lifeHUD3.SetActive(false);
             }
