@@ -23,7 +23,7 @@ public class Spawnboules : MonoBehaviour
         {
             nbrBoules = 20;
         }
-        Spawn();
+        //Spawn();
     }
     public void Spawn()
     {
@@ -37,11 +37,5 @@ public class Spawnboules : MonoBehaviour
         }
 
         aSpawne = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -12,7 +12,7 @@ public class MOVEMJ3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentButton = ListeBouttons[0];
+        //CurrentButton = ListeBouttons[0];
     }
 
     // Update is called once per frame
@@ -20,11 +20,11 @@ public class MOVEMJ3 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Change_Boutton_Haut();
+            //Change_Boutton_Haut();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Change_Boutton_Down();
+            //Change_Boutton_Down();
         }
     }
 
