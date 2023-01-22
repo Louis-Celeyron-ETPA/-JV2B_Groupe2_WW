@@ -11,18 +11,22 @@ public class GenerCode : MonoBehaviour
     public List<int> combiBase = new List<int>();
     public List<int> combiRepro = new List<int>();
     public List<TextMeshProUGUI> listeTexte = new List<TextMeshProUGUI>();
+    public List<GameObject> listeImage = new List<GameObject>();
+    public Material matCheck;
 
     private int indexCombi = 0;
     public GameObject canva;
     private bool valide = false;
-    private int dif = 3;
+    private int dif = 5;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         for (int i = 0; i < 7; i++)
         {
-            listeTexte[i].SetActive(false);
+            listeTexte[i].alpha = 0;
+            listeImage[i].SetActive(false);
         }
         for (int i = 0; i < dif; i++)
         {
@@ -44,7 +48,8 @@ public class GenerCode : MonoBehaviour
             {
                 nomTouche = "Gauche";
             }
-            listeTexte[i].text.SetActive(true);
+            listeTexte[i].alpha = 1;
+            listeImage[i].SetActive(true);
             listeTexte[i].text = nomTouche;
         }
         print(combiBase);
@@ -53,6 +58,7 @@ public class GenerCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //controles pc
         if (valide==true)
         {
             if (Input.GetKeyDown(KeyCode.Z))
@@ -85,57 +91,82 @@ public class GenerCode : MonoBehaviour
             canva.SetActive(false);
             valide = true;
         }
-       if (indexCombi >= 3){
+       if (indexCombi >= dif){
         Debug.Log("Gagne");
+        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
        }
     }
     
-    void CombiHaut()
+//a chaque fois qu'on active une de ces fonctions, elle ajoute l'input à la liste et la compare avec l'originale
+
+    public void CombiHaut()
     {
         if (valide==true){
         combiRepro.Add(1);
         if (combiBase[indexCombi] == combiRepro[indexCombi])
         {
             Debug.Log("Bien");
+            listeImage[indexCombi].GetComponent<MeshRenderer>().material = matCheck;
             indexCombi = indexCombi + 1;
+        }
+        else
+        {
+          ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);  
         }
         }
     }
 
-    void CombiDroite()
+    public void CombiDroite()
     {
         if (valide==true){
         combiRepro.Add(2);
         if (combiBase[indexCombi] == combiRepro[indexCombi])
         {
             Debug.Log("Bien");
+            listeImage[indexCombi].GetComponent<MeshRenderer>().material = matCheck;
             indexCombi = indexCombi + 1;
+        }
+        else
+        {
+          ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);  
         }
         }
     }
-    void CombiBas()
+    public void CombiBas()
     {
         if (valide==true){
         combiRepro.Add(3);
         if (combiBase[indexCombi] == combiRepro[indexCombi])
         {
             Debug.Log("Bien");
+            listeImage[indexCombi].GetComponent<MeshRenderer>().material = matCheck;
             indexCombi = indexCombi + 1;
+        }
+        else
+        {
+          ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);  
         }
         }
     }
-    void CombiGauche()
+    public void CombiGauche()
     {
         if (valide==true){
         combiRepro.Add(4);
         if (combiBase[indexCombi] == combiRepro[indexCombi])
         {
             Debug.Log("Bien");
+            listeImage[indexCombi].GetComponent<MeshRenderer>().material = matCheck;
             indexCombi = indexCombi + 1;
+        }
+        else
+        {
+          ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);  
         }
         }
     }
-    void Action()
+
+    //valide qu'on a vu le code et permet de passer en mode saisie
+    public void Action()
     {
         canva.SetActive(false);
             valide = true;
