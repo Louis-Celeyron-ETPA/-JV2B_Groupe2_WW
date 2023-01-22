@@ -6,28 +6,25 @@ namespace SebastienMiniGame1
 {
     public class Victory : MonoBehaviour
     {
-        public bool victory = false;
-        // Start is called before the first frame update
-        void Start()
+        private bool _victory = false;
+
+        public void Update()
         {
+            if (_victory)
+            {
+               ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+               _victory = false; // Reset la var victory pour empêcher la boucle.
+
+            }
 
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void OnCollisionEnter2D(Collision2D collisionGoal)
         {
             if (collisionGoal.transform.gameObject.name == "Ball")
             {
                 collisionGoal.gameObject.SetActive(false);
                 Debug.Log("GG");
-                victory = true;
-                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
-
+                _victory = true;
             }
         }
     }
