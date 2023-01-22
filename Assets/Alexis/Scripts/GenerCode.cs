@@ -22,7 +22,7 @@ public class GenerCode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //if (ManagerManager.DifficultyManager.GetDifficulty() = 0)
         for (int i = 0; i < 7; i++)
         {
             listeTexte[i].alpha = 0;
