@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 197151509}
   - component: {fileID: 197151513}
   - component: {fileID: 197151514}
+  - component: {fileID: 197151515}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -561,7 +562,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197151508}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47b005b6f11459f49a4755adbe08eaf9, type: 3}
   m_Name: 
@@ -583,6 +584,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &197151515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197151508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1751defd103264f43af57abaca1d7112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListeBouttons:
+  - {fileID: 887029146}
+  - {fileID: 1057142021}
+  - {fileID: 2126851363}
+  - {fileID: 1882927594}
+  - {fileID: 689571850}
+  - {fileID: 829540902}
+  - {fileID: 956337014}
+  - {fileID: 365208779}
+  - {fileID: 1775722056}
+  CurrentButton: {fileID: 0}
+  refBool: {fileID: 197151508}
 --- !u!1 &224719282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1403,7 @@ GameObject:
   - component: {fileID: 365208779}
   - component: {fileID: 365208782}
   m_Layer: 5
-  m_Name: Button (9)
+  m_Name: Button (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,7 +1423,7 @@ RectTransform:
   m_Children:
   - {fileID: 1561664191}
   m_Father: {fileID: 1261234986}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3022,7 +3047,7 @@ GameObject:
   - component: {fileID: 749761667}
   - component: {fileID: 749761670}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: Button (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3042,7 +3067,7 @@ RectTransform:
   m_Children:
   - {fileID: 476215593}
   m_Father: {fileID: 1261234986}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5002,9 +5027,9 @@ RectTransform:
   - {fileID: 689571849}
   - {fileID: 829540901}
   - {fileID: 956337013}
-  - {fileID: 749761666}
-  - {fileID: 1775722055}
   - {fileID: 365208778}
+  - {fileID: 1775722055}
+  - {fileID: 749761666}
   - {fileID: 1736149337}
   m_Father: {fileID: 0}
   m_RootOrder: 19

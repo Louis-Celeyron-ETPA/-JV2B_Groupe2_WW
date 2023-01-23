@@ -8,14 +8,14 @@ public class Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Invoke("SwitchControl", 1.0f); //à changer
+        Invoke("SwitchControl", 15.0f); //à changer
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (switchBool==false)
-        {
+        //while (switchBool==false)
+        //{
         if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.position = new Vector3(transform.position.x - 0.01f , 0f, transform.position.z);
@@ -32,7 +32,7 @@ public class Move : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, 0f, transform.position.z - 0.01f);
             }
-        }
+        //}
     }
 
     public void MoveAgHaut()

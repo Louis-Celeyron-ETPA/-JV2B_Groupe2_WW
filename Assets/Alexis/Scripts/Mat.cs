@@ -11,7 +11,7 @@ public class Mat : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        /*numcol = Random.Range(1, 3);
+        numcol = Random.Range(1, 3);
         if (numcol==1)
         {
             mr.material.color = Color.green;
@@ -19,7 +19,7 @@ public class Mat : MonoBehaviour
         if (numcol == 2)
         {
             mr.material.color = couleurboule2;
-        }*/
+        }
 
     }
 }

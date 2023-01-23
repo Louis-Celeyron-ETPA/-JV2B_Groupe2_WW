@@ -8,23 +8,27 @@ public class MOVEMJ3 : MonoBehaviour
     public List<Button> ListeBouttons;
     public Button CurrentButton ;
     private int index_boutton;
+    public GameObject refBool;
 
     // Start is called before the first frame update
     void Start()
     {
-        //CurrentButton = ListeBouttons[0];
+        CurrentButton = ListeBouttons[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if(refBool.GetComponent<Move>().switchBool==true)
         {
-            //Change_Boutton_Haut();
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            //Change_Boutton_Down();
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Change_Boutton_Haut();
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Change_Boutton_Down();
+            }
         }
     }
 
