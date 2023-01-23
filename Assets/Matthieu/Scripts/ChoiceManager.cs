@@ -64,9 +64,15 @@ public class ChoiceManager : MonoBehaviour
             choices[i].sprite.color = choices[i].initialColor; 
         }
 
-        if(_currentChoice.name == "Fish")
+        Debug.Log(_currentChoice.name); 
+
+        if(_currentChoice.name == "DollyFish")
         {
-      
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+        }
+        else
+        {
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
         }
     }
 

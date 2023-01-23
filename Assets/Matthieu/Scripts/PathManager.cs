@@ -18,8 +18,7 @@ public class PathManager : MonoBehaviour
     public int finalPositionIndex;
     public ChoiceManager choiceManager; 
 
-    //public Vector3[] initialPath;
-    //public Vector3[] nextPath; 
+  
 
     public float timer;
     public float finalTimer;
@@ -84,14 +83,7 @@ public class PathManager : MonoBehaviour
 
     }
 
-    //void SetInitialPath()
-    //{
-    //    startPath.m_Waypoints[0].position = initialPath[0];
-    //    startPath.m_Waypoints[1].position = initialPath[1];
-    //    startPath.m_Waypoints[2].position = initialPath[2];
-    //    startPath.m_Waypoints[3].position = initialPath[3];
-    //}
-
+   
     void ChangePath()
     {
         currentPath.m_Waypoints = new CinemachineSmoothPath.Waypoint[2];
