@@ -10,14 +10,17 @@ namespace NatanG_minijeu3
     public GameObject Victory;
     public GameObject Defeat;
 
+
     public bool hatBool;
     public bool tieBool;
     public bool tallBool;
 
     public GameObject Yes;
     public GameObject No;
-    
-    void Start()
+
+    public bool VerticalAxisUsed;
+
+        void Start()
     {
         //------------------------------------- Random du meutrier
         placementSelection = 1;
@@ -90,43 +93,47 @@ namespace NatanG_minijeu3
         }
     }
 
-        void Update()
+        //------------------------------------- Position du selecteur
+        public void SelectionGoRight() // Selection va à droite
         {
-            //------------------------------------- Position du selecteur
-            if (Defeat.transform.position.y != -4 && Victory.transform.position.y != -4)
+            if (!VerticalAxisUsed) // = if(isRightDown == false)
             {
-                if (transform.position.x < 3)
+                if (Defeat.transform.position.y != -4 && Victory.transform.position.y != -4 && transform.position.x < 3)
                 {
-                    if (Input.GetKeyDown(KeyCode.RightArrow))
-                    {
-                        transform.position += new Vector3(2.5f, 0);
-                        placementSelection -= 1;
-                    }
-                }
-                if (transform.position.x > -6)
-                {
-                    if (Input.GetKeyDown(KeyCode.LeftArrow))
-                    {
-                        transform.position += new Vector3(-2.5f, 0);
-                        placementSelection += 1;
-                    }
+                    VerticalAxisUsed = true;
+                    transform.position += new Vector3(2.5f, 0);
+                    placementSelection -= 1;
                 }
             }
-            //------------------------------------- Selection et V/D
-            if (Input.GetKeyDown(KeyCode.Space))
+        }
+        public void SelectionGoLeft() // Selection va à droite
+        {
+            if (!VerticalAxisUsed) // = if(isLeftDown == false)
             {
-                if (NumTueur == placementSelection)
+                if (Defeat.transform.position.y != -4 && Victory.transform.position.y != -4 && transform.position.x > -6)
                 {
-                    Victory.transform.position = new Vector3(0, -4);
-                    //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
-                }
-                else
-                {
-                    Defeat.transform.position = new Vector3(0, -4);
-                    //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    VerticalAxisUsed = true;
+                    transform.position += new Vector3(-2.5f, 0);
+                    placementSelection += 1;
                 }
             }
-
+        }
+        public void Reset() // reset de VerticalAxisUsed
+        {
+            VerticalAxisUsed = false;
+        }
+        public void ValiderChoix()//Selection et V/D
+        {
+            if (NumTueur == placementSelection)
+            {
+                Victory.transform.position = new Vector3(0, -4);
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+            }
+            else
+            {
+                Defeat.transform.position = new Vector3(0, -4);
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+            }
         }
     }
 }

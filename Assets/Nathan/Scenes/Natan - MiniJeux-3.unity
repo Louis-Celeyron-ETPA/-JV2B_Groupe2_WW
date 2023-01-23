@@ -491,10 +491,34 @@ MonoBehaviour:
   directions:
     left:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2032670402}
+          m_TargetAssemblyTypeName: NatanG_minijeu3.Selection, Assembly-CSharp
+          m_MethodName: SelectionGoLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     right:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2032670402}
+          m_TargetAssemblyTypeName: NatanG_minijeu3.Selection, Assembly-CSharp
+          m_MethodName: SelectionGoRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     down:
       m_PersistentCalls:
         m_Calls: []
@@ -504,14 +528,50 @@ MonoBehaviour:
   pointsMorts:
     horizontal:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2032670402}
+          m_TargetAssemblyTypeName: NatanG_minijeu3.Selection, Assembly-CSharp
+          m_MethodName: Reset
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     vertical:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2032670402}
+          m_TargetAssemblyTypeName: NatanG_minijeu3.Selection, Assembly-CSharp
+          m_MethodName: Reset
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   action:
     onPressed:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2032670402}
+          m_TargetAssemblyTypeName: NatanG_minijeu3.Selection, Assembly-CSharp
+          m_MethodName: ValiderChoix
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onUp:
       m_PersistentCalls:
         m_Calls: []
@@ -1731,3 +1791,4 @@ MonoBehaviour:
   tallBool: 0
   Yes: {fileID: 2032551178}
   No: {fileID: 1607970244}
+  VerticalAxisUsed: 0

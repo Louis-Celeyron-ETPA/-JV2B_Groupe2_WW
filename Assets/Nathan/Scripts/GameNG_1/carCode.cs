@@ -11,7 +11,7 @@ namespace NatanG_minijeu1
         //défaite du joueur
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
             Destroy(gameObject);
         }
 

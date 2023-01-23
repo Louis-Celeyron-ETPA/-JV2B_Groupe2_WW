@@ -16,8 +16,8 @@ namespace NatanG_minijeu2
         //------------------------------------- Les zone tue le joueur
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
-            Destroy(Perso);
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+            
         }
     }
 }

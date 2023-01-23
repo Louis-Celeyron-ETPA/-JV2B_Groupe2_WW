@@ -23,7 +23,7 @@ namespace NatanG_minijeu1
             //------------------------------------- Voir si toutes les voitures on spawn
             if (i == nombreDeVoiture && time >= 1.5f)
             {
-                //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
 
             //------------------------------------- Création des voitures

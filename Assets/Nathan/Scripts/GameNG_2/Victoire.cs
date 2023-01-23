@@ -13,8 +13,8 @@ namespace NatanG_minijeu2
         //------------------------------------- arriver dans la zone fait gagner
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Perso.transform.position = new Vector3(7, 0);
-            //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+            
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
         }
     }
 }
