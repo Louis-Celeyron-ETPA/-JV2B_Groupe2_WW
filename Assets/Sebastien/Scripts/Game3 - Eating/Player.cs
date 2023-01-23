@@ -9,7 +9,7 @@ namespace SebastienMiniGame3
     public class Player : MonoBehaviour
     {
         public GameObject player;
-        private float _speed = 0.05f;
+        private float _speed = 0.02f;
         private Rigidbody2D _rgb;
         public GameObject item;
         private SpriteRenderer _renderer;

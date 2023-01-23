@@ -10,7 +10,7 @@ namespace SebastienMiniGame1
     {
         public KeyCode actionKey; 
         public float strength;
-        public float strengthMax = 100f;
+        public float strengthMax = 10f;
 
         Rigidbody2D rb;
         public Scrollbar scrollbar;
@@ -31,7 +31,7 @@ namespace SebastienMiniGame1
         {
 
             // Strength minimum = 0
-            // Strength maximum (capée pour ne pas envoyer la balle trop loin) = 8
+            // Strength maximum (capée pour ne pas envoyer la balle trop loin) = 10
 
 
 
@@ -77,8 +77,8 @@ namespace SebastienMiniGame1
         public void ThrowingUpButton()
         {
 
-            rb.AddForce(transform.right * strength, ForceMode2D.Impulse);
-            rb.AddForce(transform.up * strength, ForceMode2D.Impulse);
+            rb.AddForce(transform.right * strength, ForceMode2D.Impulse); // Applique une certaine force vers la droite
+            rb.AddForce(transform.up * strength, ForceMode2D.Impulse); // Applique une certaine force vers le haut
             isThrowing = true;
 
 

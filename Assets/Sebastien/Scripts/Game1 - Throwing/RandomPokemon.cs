@@ -15,15 +15,15 @@ namespace SebastienMiniGame1
 
             void Awake()
             {
-                nbDrawnPokemon = Random.Range(0,4);
+                nbDrawnPokemon = Random.Range(0,152);
 
             }
    
             // Start is called before the first frame update
             void Start()
             {
-                
-                pokemonDisplayed.sprite = spriteArray[nbDrawnPokemon];
+
+            pokemonDisplayed.sprite = GetComponent<SpriteRenderer>().sprite = spriteArray[nbDrawnPokemon];
 
                 if (nbDrawnPokemon <= 2)
                 {

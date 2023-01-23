@@ -32,7 +32,6 @@ namespace SebastienMiniGame1
             livesLeft = 3;
             livesLeftDisplay.text = "Balls Left : " + livesLeft;
             Debug.Log(livesLeft + " vies restantes");
-            //player.transform.position = new Vector2(initalX, initalY);
 
         }
 
@@ -88,14 +87,14 @@ namespace SebastienMiniGame1
             }
             else if (livesLeft == 0)
             {
-                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail); // Echec du mini-jeu 
             }
         }
 
         public void Respawn()
         {
             isDead = false;
-            thrownBall.isThrowing = false;
+            thrownBall.isThrowing = false; // Reset 
 
             
 
