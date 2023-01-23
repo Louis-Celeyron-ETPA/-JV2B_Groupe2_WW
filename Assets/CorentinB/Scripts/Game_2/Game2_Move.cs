@@ -7,33 +7,33 @@ namespace CorentinB_Game2
     public class Game2_Move : MonoBehaviour
     {
         public float speed;
-
-        void Start()
-        {
-
-        }
+        public bool verticalAxisUsed;
 
         void Update()
         {
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                transform.position += new Vector3(0.0025f, 0);
-            }
+ 
+        }
 
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                transform.position += new Vector3(0, -0.0025f);
-            }
+        public void MovePersoLeft()
+        { 
+                transform.position += new Vector3(-0.0030f, 0); 
+        }
+        public void MovePersoRight()
+        {
+                transform.position += new Vector3(0.0030f, 0);  
+        }
+        public void MovePersoDown()
+        {   
+                transform.position += new Vector3(0, -0.0030f);
+        }
+        public void MovePersoUp()
+        {
+                transform.position += new Vector3(0, 0.0030f);
+        }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                transform.position += new Vector3(-0.0025f, 0);
-            }
-
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                transform.position += new Vector3(0, 0.0025f);
-            }
+        public void Reset()
+        {
+            verticalAxisUsed = false;
         }
     }
 }

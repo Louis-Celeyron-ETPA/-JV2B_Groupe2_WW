@@ -12,8 +12,7 @@ namespace CorentinB_Game2
             if (collision.transform.gameObject.tag == "Finish")
             {
                 //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
-                Perso.GetComponent<Renderer>().enabled = false;
-            }
+                print("Victoire");            }
         }
     }
 }

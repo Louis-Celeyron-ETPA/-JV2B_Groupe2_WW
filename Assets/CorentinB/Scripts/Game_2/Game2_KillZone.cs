@@ -16,7 +16,7 @@ public class Game2_KillZone : MonoBehaviour
         private void OnTriggerEnter2D(Collider2D collision)
     {
             //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
-            Perso.GetComponent<Renderer>().enabled = false;
+            print("t'es mort");
     }
     }
 }

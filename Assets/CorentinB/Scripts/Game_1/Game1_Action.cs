@@ -15,13 +15,13 @@ namespace CorentinB_Game1
             if (collision.transform.gameObject.tag == "Box")
             {
                 //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
-                Fusee.GetComponent<Renderer>().enabled = false;
+                print("t'es mort");
             }
 
             if (collision.transform.gameObject.tag == "Finish")
             {
                 //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
-                Fusee.GetComponent<Renderer>().enabled = false;
+                print("victoire");
             }
         }
     }

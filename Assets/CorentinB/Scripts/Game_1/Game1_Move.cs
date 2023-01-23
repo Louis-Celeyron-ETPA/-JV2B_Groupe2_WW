@@ -25,8 +25,7 @@ namespace CorentinB_Game1
 
             if (transform.position.x >= -5.17f)
             {
-                //transform.position += new Vector3(-0.007f, 0);
-                transform.position += Vector3.left * 0.007f;
+                transform.position += new Vector3(-0.007f, 0);
             }
         }
         public void MoveFuseeRight()
@@ -34,7 +33,6 @@ namespace CorentinB_Game1
 
             if (transform.position.x <= 5.22f)
             {
-
                 transform.position += new Vector3(0.007f, 0);
             }
         }
