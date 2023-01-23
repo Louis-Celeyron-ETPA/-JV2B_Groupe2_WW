@@ -7,12 +7,12 @@ namespace Alexis
     {
 
         public GameObject objetASpawner;
-        private int couleur;
-        private Color A = Color.cyan, B = Color.yellow, C = Color.magenta;
-        bool aTourne = false;
+        private int _couleur;
+        private Color _couleurA = Color.cyan, _couleurB = Color.yellow, _couleurC = Color.magenta;
+        private bool _aTourne = false;
         public List<GameObject> listeAssiette = new List<GameObject>();
         public GameObject reference;
-        public int _nbrATrier = 25;
+        public int nbrATrier = 25;
 
         // Start is called before the first frame update
 
@@ -20,36 +20,35 @@ namespace Alexis
         {
             Spawn();
             //je sais c'est crade mais c'est pour éviter que la victoire se trigger alors qu'il reste encore un objet à trier
-            _nbrATrier +=1;
+            nbrATrier +=1;
             
         }
         public void Spawn()
         {
-            if (aTourne == false)
+            if (_aTourne == false)
             {
                 for (int i = 0; i < 25; i++)
                 {
-                    //var newObject = Instantiate(objetASpawner, new Vector2(0.0f, -6.23f), Quaternion.identity);
                     var newObject = Instantiate(objetASpawner, new Vector3(0,0,0), Quaternion.identity);
-                    couleur = Random.Range(1, 4);
-                    if (couleur == 1)
+                    _couleur = Random.Range(1, 4);
+                    if (_couleur == 1)
                     {
-                        newObject.GetComponent<MeshRenderer>().material.color = A;
+                        newObject.GetComponent<MeshRenderer>().material.color = _couleurA;
                     }
-                    if (couleur == 2)
+                    if (_couleur == 2)
                     {
-                        newObject.GetComponent<MeshRenderer>().material.color = B;
+                        newObject.GetComponent<MeshRenderer>().material.color = _couleurB;
                     }
-                    if (couleur == 3)
+                    if (_couleur == 3)
                     {
-                        newObject.GetComponent<MeshRenderer>().material.color = C;
+                        newObject.GetComponent<MeshRenderer>().material.color = _couleurC;
                     }
                     listeAssiette.Add(newObject);
                 }
                 reference.GetComponent<Swipe>().liste = listeAssiette;
             }
 
-            aTourne = true;
+            _aTourne = true;
         }
 
 

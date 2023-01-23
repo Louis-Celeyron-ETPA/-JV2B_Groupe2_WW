@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class Spawnboules : MonoBehaviour
 {
-    public GameObject Boule;
-    private bool aSpawne = false;
-    private int nbrBoules;
+    public GameObject boule;
+    private bool _aSpawne = false;
+    private int _nbrBoules;
     // Start is called before the first frame update
     void Start()
     {
         if (ManagerManager.DifficultyManager.GetDifficulty()==1)
         {
-            nbrBoules = 10;
+            _nbrBoules = 10;
         }
         if (ManagerManager.DifficultyManager.GetDifficulty() == 2)
         {
-            nbrBoules = 15;
+            _nbrBoules = 15;
         }
         if (ManagerManager.DifficultyManager.GetDifficulty() == 3)
         {
-            nbrBoules = 20;
+            _nbrBoules = 20;
         }
         //Spawn();
     }
     public void Spawn()
     {
-        if (aSpawne == false)
+        if (_aSpawne == false)
         {
-            for (int i = 0; i < nbrBoules+1; i++)
+            for (int i = 0; i < _nbrBoules+1; i++)
             {
                 //var newObject = Instantiate(objetASpawner, new Vector2(0.0f, -6.23f), Quaternion.identity);
-                var newObject = Instantiate(Boule, new Vector3(Random.Range(-2,2),5, Random.Range(-2, 2)), Quaternion.identity);
+                var newObject = Instantiate(boule, new Vector3(Random.Range(-2,2),5, Random.Range(-2, 2)), Quaternion.identity);
             }
         }
 
-        aSpawne = true;
+        _aSpawne = true;
     }
 }

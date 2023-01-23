@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+namespace Alexis
+{
+
 public class MOVEMJ3 : MonoBehaviour
 {
     private int _nombre = 0;
@@ -50,7 +53,7 @@ public class MOVEMJ3 : MonoBehaviour
         }
     }
 
-    void NombrePlus()
+    public void NombrePlus()
     {
         if (refBool.GetComponent<Move>().switchBool==true){
             _nombre = _nombre + 1;
@@ -59,7 +62,7 @@ public class MOVEMJ3 : MonoBehaviour
         }
     }
 
-    void NombreMoins()
+    public void NombreMoins()
     {
         if (refBool.GetComponent<Move>().switchBool==true){
             _nombre = _nombre - 1;
@@ -69,7 +72,7 @@ public class MOVEMJ3 : MonoBehaviour
 
     }
 
-    void ValideNombre()
+    public void ValideNombre()
     {
         if(refBool.GetComponent<Verif>().totalvert==_nombre)
         {
@@ -83,4 +86,5 @@ public class MOVEMJ3 : MonoBehaviour
         }
     }
 
+}
 }

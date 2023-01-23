@@ -4,31 +4,22 @@ using UnityEngine;
 
 public class Verif : MonoBehaviour
 {
-    public List<GameObject> Listeboules;
-    public int totalorange;
-    public int totalvert;
+    public List<GameObject> listeBoules;
+    public int totalOrange;
+    public int totalVert;
     public int valeur;
-    // Start is called before the first frame update
+
     void Start()
     {
         for (int i = 0; i < 9; i++)
         {
-            var currentcolor = Listeboules[i].GetComponent<Mat>().numcol;
+            var currentcolor = listeBoules[i].GetComponent<Mat>().numcol;
             if (currentcolor == 1)
             {
-                totalvert = totalvert + 1;
+                totalVert = totalVert + 1;
             }
             Debug.Log(currentcolor);
         }
-        Debug.Log(totalvert);
+        Debug.Log(totalVert);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-
 }

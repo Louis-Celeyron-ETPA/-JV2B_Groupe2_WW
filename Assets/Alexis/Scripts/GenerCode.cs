@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+namespace Alexis
+{
+
 public class GenerCode : MonoBehaviour
 {
     public int touche;
@@ -14,12 +17,11 @@ public class GenerCode : MonoBehaviour
     public List<GameObject> listeImage = new List<GameObject>();
     public Material matCheck;
 
-    private int indexCombi = 0;
-    public GameObject canva;
-    private bool valide = false;
-    private int dif = 5;
+    private int _indexCombi = 0;
+    public GameObject _canva;
+    private bool _valide = false;
+    private int _dif = 5;
 
-    // Start is called before the first frame update
     void Start()
     {
         //if (ManagerManager.DifficultyManager.GetDifficulty() = 0)
@@ -28,7 +30,7 @@ public class GenerCode : MonoBehaviour
             listeTexte[i].alpha = 0;
             listeImage[i].SetActive(false);
         }
-        for (int i = 0; i < dif; i++)
+        for (int i = 0; i < _dif; i++)
         {
             touche = Random.Range(1, 4);
             combiBase.Add(touche);
@@ -59,7 +61,7 @@ public class GenerCode : MonoBehaviour
     void Update()
     {
         //controles pc
-        if (valide==true)
+        if (_valide==true)
         {
             if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -88,10 +90,10 @@ public class GenerCode : MonoBehaviour
             
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            canva.SetActive(false);
-            valide = true;
+            _canva.SetActive(false);
+            _valide = true;
         }
-       if (indexCombi >= dif){
+       if (_indexCombi >= _dif){
         Debug.Log("Gagne");
         ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
        }
@@ -101,13 +103,13 @@ public class GenerCode : MonoBehaviour
 
     public void CombiHaut()
     {
-        if (valide==true){
+        if (_valide==true){
         combiRepro.Add(1);
-        if (combiBase[indexCombi] == combiRepro[indexCombi])
+        if (combiBase[_indexCombi] == combiRepro[_indexCombi])
         {
             Debug.Log("Bien");
-            listeImage[indexCombi].GetComponent<MeshRenderer>().material = matCheck;
-            indexCombi = indexCombi + 1;
+            listeImage[_indexCombi].GetComponent<MeshRenderer>().material = matCheck;
+            _indexCombi = _indexCombi + 1;
         }
         else
         {
@@ -118,13 +120,13 @@ public class GenerCode : MonoBehaviour
 
     public void CombiDroite()
     {
-        if (valide==true){
+        if (_valide==true){
         combiRepro.Add(2);
-        if (combiBase[indexCombi] == combiRepro[indexCombi])
+        if (combiBase[_indexCombi] == combiRepro[_indexCombi])
         {
             Debug.Log("Bien");
-            listeImage[indexCombi].GetComponent<MeshRenderer>().material = matCheck;
-            indexCombi = indexCombi + 1;
+            listeImage[_indexCombi].GetComponent<MeshRenderer>().material = matCheck;
+            _indexCombi = _indexCombi + 1;
         }
         else
         {
@@ -134,13 +136,13 @@ public class GenerCode : MonoBehaviour
     }
     public void CombiBas()
     {
-        if (valide==true){
+        if (_valide==true){
         combiRepro.Add(3);
-        if (combiBase[indexCombi] == combiRepro[indexCombi])
+        if (combiBase[_indexCombi] == combiRepro[_indexCombi])
         {
             Debug.Log("Bien");
-            listeImage[indexCombi].GetComponent<MeshRenderer>().material = matCheck;
-            indexCombi = indexCombi + 1;
+            listeImage[_indexCombi].GetComponent<MeshRenderer>().material = matCheck;
+            _indexCombi = _indexCombi + 1;
         }
         else
         {
@@ -150,13 +152,13 @@ public class GenerCode : MonoBehaviour
     }
     public void CombiGauche()
     {
-        if (valide==true){
+        if (_valide==true){
         combiRepro.Add(4);
-        if (combiBase[indexCombi] == combiRepro[indexCombi])
+        if (combiBase[_indexCombi] == combiRepro[_indexCombi])
         {
             Debug.Log("Bien");
-            listeImage[indexCombi].GetComponent<MeshRenderer>().material = matCheck;
-            indexCombi = indexCombi + 1;
+            listeImage[_indexCombi].GetComponent<MeshRenderer>().material = matCheck;
+            _indexCombi = _indexCombi + 1;
         }
         else
         {
@@ -165,11 +167,12 @@ public class GenerCode : MonoBehaviour
         }
     }
 
-    //valide qu'on a vu le code et permet de passer en mode saisie
+    //_valide qu'on a vu le code et permet de passer en mode saisie
     public void Action()
     {
-        canva.SetActive(false);
-            valide = true;
+        _canva.SetActive(false);
+            _valide = true;
     }
+}
 }
 

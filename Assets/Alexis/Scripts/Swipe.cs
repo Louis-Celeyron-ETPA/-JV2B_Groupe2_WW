@@ -6,14 +6,12 @@ namespace Alexis
 
 public class Swipe : MonoBehaviour
 {
-    public Color A = Color.cyan , B = Color.yellow, C = Color.magenta;
     public int couleur;
     public Vector3 targetLocation;
     public Vector3 targetLocation2;
     public Vector3 targetLocation3;
     public Transform target;
-    public bool shouldGoToTarget;
-    public float delta = 0.1f;
+    private bool _shouldGoToTarget;
     public List<GameObject> liste;
     public GameObject refGeneration;
     public int ind = 0;
@@ -29,8 +27,8 @@ public class Swipe : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            shouldGoToTarget = true;
-            if (shouldGoToTarget)
+            _shouldGoToTarget = true;
+            if (_shouldGoToTarget)
             {
                 liste[ind].transform.position = targetLocation;
                 if (liste[ind].GetComponent<MeshRenderer>().material.color==Color.cyan)
@@ -47,8 +45,8 @@ public class Swipe : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            shouldGoToTarget = true;
-            if (shouldGoToTarget)
+            _shouldGoToTarget = true;
+            if (_shouldGoToTarget)
             {
                 liste[ind].transform.position = targetLocation2;
                 if (liste[ind].GetComponent<MeshRenderer>().material.color==Color.magenta)
@@ -66,8 +64,8 @@ public class Swipe : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            shouldGoToTarget = true;
-            if (shouldGoToTarget)
+            _shouldGoToTarget = true;
+            if (_shouldGoToTarget)
             {
                 liste[ind].transform.position = targetLocation3;
                 if (liste[ind].GetComponent<MeshRenderer>().material.color==Color.yellow)
@@ -91,8 +89,8 @@ public class Swipe : MonoBehaviour
     }
     public void SwipeHaut()
     {
-        shouldGoToTarget = true;
-            if (shouldGoToTarget)
+        _shouldGoToTarget = true;
+            if (_shouldGoToTarget)
             {
                 liste[ind].transform.position = targetLocation2;
                 if (liste[ind].transform.position == targetLocation2)
@@ -108,8 +106,8 @@ public class Swipe : MonoBehaviour
 
     public void SwipeGauche()
     {
-        shouldGoToTarget = true;
-            if (shouldGoToTarget)
+        _shouldGoToTarget = true;
+            if (_shouldGoToTarget)
             {
                 liste[ind].transform.position = targetLocation;
                 if (liste[ind].transform.position == targetLocation)
@@ -125,8 +123,8 @@ public class Swipe : MonoBehaviour
 
     public void SwipeDroite()
     {
-        shouldGoToTarget = true;
-            if (shouldGoToTarget)
+        _shouldGoToTarget = true;
+            if (_shouldGoToTarget)
             {
                 liste[ind].transform.position = targetLocation3;
                 if (liste[ind].transform.position == targetLocation3)

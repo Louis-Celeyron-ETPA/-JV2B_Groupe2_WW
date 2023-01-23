@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Mat : MonoBehaviour
 {
-    private Color couleurboule1 = new Color(26, 212, 0);
-    private Color couleurboule2 = new Color(226, 118, 0);
+    private Color _couleurboule1 = new Color(26, 212, 0);
+    private Color _couleurboule2 = new Color(226, 118, 0);
     public MeshRenderer mr;
-    public int numcol = 0;
+    public int numCol = 0;
     // Start is called before the first frame update
     void Awake()
     {
-        numcol = Random.Range(1, 3);
-        if (numcol==1)
+        numCol = Random.Range(1, 3);
+        if (numCol==1)
         {
             mr.material.color = Color.green;
         }
-        if (numcol == 2)
+        if (numCol == 2)
         {
-            mr.material.color = couleurboule2;
+            mr.material.color = _couleurboule2;
         }
 
     }
