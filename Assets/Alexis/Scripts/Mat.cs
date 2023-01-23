@@ -12,6 +12,7 @@ public class Mat : MonoBehaviour
     void Awake()
     {
         numCol = Random.Range(1, 3);
+        
         if (numCol==1)
         {
             mr.material.color = Color.green;

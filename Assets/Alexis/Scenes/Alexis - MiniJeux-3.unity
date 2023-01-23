@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 173430947}
   - component: {fileID: 173430951}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: Boule (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 173430948}
-  numcol: 0
+  numCol: 0
 --- !u!1 &197151508
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,9 +483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d71cf8457c77742a263f2129f01544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Listeboules:
-  - {fileID: 2120697642}
+  listeBoules:
   - {fileID: 1201775457}
+  - {fileID: 2120697642}
   - {fileID: 173430946}
   - {fileID: 244121756}
   - {fileID: 1092553747}
@@ -493,8 +493,8 @@ MonoBehaviour:
   - {fileID: 1655492201}
   - {fileID: 2086039925}
   - {fileID: 1292273446}
-  totalorange: 0
-  totalvert: 0
+  totalOrange: 0
+  totalVert: 0
   valeur: 0
 --- !u!1 &224719282
 GameObject:
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 244121757}
   - component: {fileID: 244121761}
   m_Layer: 0
-  m_Name: Sphere (3)
+  m_Name: Boule (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 244121758}
-  numcol: 0
+  numCol: 0
 --- !u!1 &255739432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 953783194}
   - component: {fileID: 953783198}
   m_Layer: 0
-  m_Name: Sphere (5)
+  m_Name: Boule (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2860,7 +2860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 953783195}
-  numcol: 0
+  numCol: 0
 --- !u!1 &972229371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,7 +3201,7 @@ GameObject:
   - component: {fileID: 1092553748}
   - component: {fileID: 1092553752}
   m_Layer: 0
-  m_Name: Sphere (4)
+  m_Name: Boule (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3298,7 +3298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 1092553749}
-  numcol: 0
+  numCol: 0
 --- !u!1 &1184043573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,7 +3381,7 @@ GameObject:
   - component: {fileID: 1201775458}
   - component: {fileID: 1201775462}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Boule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3478,7 +3478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 1201775459}
-  numcol: 0
+  numCol: 0
 --- !u!1 &1205209733
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,7 +3820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ff3b72ff320334a8330ad8d27b26ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boule: {fileID: 5856412035791259229, guid: a78846026b8f2a540a521add1305995d, type: 3}
+  boule: {fileID: 0}
 --- !u!65 &1250910528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4129,7 +4129,7 @@ GameObject:
   - component: {fileID: 1292273447}
   - component: {fileID: 1292273451}
   m_Layer: 0
-  m_Name: Sphere (8)
+  m_Name: Boule (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4226,7 +4226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 1292273448}
-  numcol: 0
+  numCol: 0
 --- !u!1 &1364334790
 GameObject:
   m_ObjectHideFlags: 0
@@ -4908,7 +4908,7 @@ GameObject:
   - component: {fileID: 1655492202}
   - component: {fileID: 1655492206}
   m_Layer: 0
-  m_Name: Sphere (6)
+  m_Name: Boule (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5005,7 +5005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 1655492203}
-  numcol: 0
+  numCol: 0
 --- !u!1 &1656191244
 GameObject:
   m_ObjectHideFlags: 0
@@ -5634,7 +5634,7 @@ GameObject:
   - component: {fileID: 2086039926}
   - component: {fileID: 2086039930}
   m_Layer: 0
-  m_Name: Sphere (7)
+  m_Name: Boule (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5731,7 +5731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 2086039927}
-  numcol: 0
+  numCol: 0
 --- !u!1 &2120697642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,7 +5746,7 @@ GameObject:
   - component: {fileID: 2120697643}
   - component: {fileID: 2120697647}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Boule (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5843,7 +5843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mr: {fileID: 2120697644}
-  numcol: 0
+  numCol: 0
 --- !u!4 &2125969271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5856412035791259224, guid: a78846026b8f2a540a521add1305995d, type: 3}

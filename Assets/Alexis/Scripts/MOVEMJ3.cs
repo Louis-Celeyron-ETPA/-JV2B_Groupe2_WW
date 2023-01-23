@@ -77,12 +77,13 @@ public class MOVEMJ3 : MonoBehaviour
         if(refBool.GetComponent<Verif>().totalVert==_nombre)
         {
             ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
-
+            Debug.Log("yes");
         }
         else
         {
             ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
-
+            Debug.Log("Oh non");
+            Debug.Log(refBool.GetComponent<Verif>().totalVert);
         }
     }
 

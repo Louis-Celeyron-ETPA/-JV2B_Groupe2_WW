@@ -959,7 +959,8 @@ MonoBehaviour:
   - {fileID: 2124926970}
   - {fileID: 1745514357}
   matCheck: {fileID: 2100000, guid: e4204a9db1c50e04f95a239b11dd64bf, type: 2}
-  canva: {fileID: 1983325617}
+  _canva: {fileID: 1195700615}
+  _valide: 0
 --- !u!1 &1484630745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1191,6 @@ GameObject:
   - component: {fileID: 1548653557}
   - component: {fileID: 1548653560}
   - component: {fileID: 1548653559}
-  - component: {fileID: 1548653558}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1218,18 +1218,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 691.8663, y: 266.8753}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1548653558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548653556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04f1c329de8a674bb7b01da9801eb81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1548653559
 MonoBehaviour:
   m_ObjectHideFlags: 0

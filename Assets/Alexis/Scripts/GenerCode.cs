@@ -19,6 +19,7 @@ public class GenerCode : MonoBehaviour
 
     private int _indexCombi = 0;
     public GameObject _canva;
+    [SerializeField]
     private bool _valide = false;
     private int _dif = 5;
 
@@ -187,7 +188,7 @@ public class GenerCode : MonoBehaviour
     public void Action()
     {
         _canva.SetActive(false);
-            _valide = true;
+        _valide = true;
     }
 }
 }
