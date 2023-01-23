@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public bool switchBool = false;
-    private float _decompte = 1f;//à changer
+    private float _decompte = 15f;
 
     // Start is called before the first frame update
     void Start()

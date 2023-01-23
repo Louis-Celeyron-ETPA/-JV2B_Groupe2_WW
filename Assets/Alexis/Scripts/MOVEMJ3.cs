@@ -6,36 +6,81 @@ using TMPro;
 
 public class MOVEMJ3 : MonoBehaviour
 {
-    public int nombre = 0;
+    private int _nombre = 0;
     public GameObject refBool;
     public TextMeshProUGUI texteNombre;
+    private string _nombreVersTexte;
+    public List<TextMeshProUGUI> listeTexteCache = new List<TextMeshProUGUI>();
+    public List<GameObject> listeObjetsCache = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-
+        for (int i = 0; i < 2; i++){
+        listeTexteCache[i].alpha = 0;
+        listeObjetsCache[i].SetActive(false);
+        }
+        listeObjetsCache[2].SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        texteNombre.text = nombre;
+        if (refBool.GetComponent<Move>().switchBool==true)
+        {
+            for (int i = 0; i < 2; i++){
+            listeTexteCache[i].alpha = 1;
+            listeObjetsCache[i].SetActive(true);
+            }
+            listeObjetsCache[2].SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            NombreMoins();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NombrePlus();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ValideNombre();
+        }
     }
 
-    void Change_Boutton_Gauche()
+    void NombrePlus()
     {
-        
-            CurrentButton = ListeBouttons[index_boutton - 1];
-        
+        if (refBool.GetComponent<Move>().switchBool==true){
+            _nombre = _nombre + 1;
+            _nombreVersTexte =_nombre.ToString();
+            texteNombre.text = _nombreVersTexte;
+        }
+    }
+
+    void NombreMoins()
+    {
+        if (refBool.GetComponent<Move>().switchBool==true){
+            _nombre = _nombre - 1;
+            _nombreVersTexte = _nombre.ToString();
+            texteNombre.text = _nombreVersTexte;
+        }
 
     }
 
-    void Change_Boutton_Droite()
+    void ValideNombre()
     {
-        
-            CurrentButton = ListeBouttons[index_boutton + 1];
-        
+        if(refBool.GetComponent<Verif>().totalvert==_nombre)
+        {
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
 
+        }
+        else
+        {
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+
+        }
     }
 
 }

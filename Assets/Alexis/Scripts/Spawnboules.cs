@@ -6,20 +6,19 @@ public class Spawnboules : MonoBehaviour
 {
     public GameObject Boule;
     private bool aSpawne = false;
-    public int difficulte = 1;
-    public int nbrBoules;
+    private int nbrBoules;
     // Start is called before the first frame update
     void Start()
     {
-        if (difficulte==1)
+        if (ManagerManager.DifficultyManager.GetDifficulty()==1)
         {
             nbrBoules = 10;
         }
-        if (difficulte == 2)
+        if (ManagerManager.DifficultyManager.GetDifficulty() == 2)
         {
             nbrBoules = 15;
         }
-        if (difficulte == 3)
+        if (ManagerManager.DifficultyManager.GetDifficulty() == 3)
         {
             nbrBoules = 20;
         }
