@@ -5,34 +5,56 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public bool switchBool = false;
+    private float _decompte = 1f;//à changer
+
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SwitchControl", 15.0f); //à changer
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //while (switchBool==false)
-        //{
-        if (Input.GetKey(KeyCode.LeftArrow))
+            if (_decompte > 0)
             {
-                transform.position = new Vector3(transform.position.x - 0.01f , 0f, transform.position.z);
+                _decompte -= Time.deltaTime;
+            }
+            else
+            {
+                //passe du contrôle de l'agitateur à la sélection de réponse
+                switchBool = true;
+            }
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                if (!switchBool)
+                {
+                    transform.position = new Vector3(transform.position.x - 0.01f, 0f, transform.position.z);
+                }
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.position = new Vector3(transform.position.x + 0.01f, 0f, transform.position.z);
+                if (!switchBool)
+                {
+                    transform.position = new Vector3(transform.position.x + 0.01f, 0f, transform.position.z);
+                }
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                transform.position = new Vector3(transform.position.x, 0f, transform.position.z + 0.01f);
+                if (!switchBool)
+                {
+                    transform.position = new Vector3(transform.position.x, 0f, transform.position.z + 0.01f);
+                }
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                transform.position = new Vector3(transform.position.x, 0f, transform.position.z - 0.01f);
+                if (!switchBool)
+                {
+                    transform.position = new Vector3(transform.position.x, 0f, transform.position.z - 0.01f);
+                }
             }
-        //}
+        
     }
 
     public void MoveAgHaut()
@@ -67,9 +89,5 @@ public class Move : MonoBehaviour
         }
     }
 
-    //passe du contrôle de l'agitateur à la sélection de réponse
-    void SwitchControl()
-    {
-        switchBool = true;
-    }
+
 }
