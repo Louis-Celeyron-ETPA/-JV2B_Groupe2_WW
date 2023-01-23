@@ -9,11 +9,14 @@ public class PathManager : MonoBehaviour
     public Transform shark;
     public CinemachineSmoothPath startPath, newPath;
     public SpriteRenderer sprite;
+    public Color initialColor;
+    public Color inWaterColor; 
     public float[] initialSpeedRange; 
     private float newLength;
     private CinemachineSmoothPath currentPath;
     public FinalPosManager fpm;
-    public int finalPositionIndex; 
+    public int finalPositionIndex;
+    public ChoiceManager choiceManager; 
 
     //public Vector3[] initialPath;
     //public Vector3[] nextPath; 
@@ -28,7 +31,9 @@ public class PathManager : MonoBehaviour
     void Start()
     {
         cart.m_Speed = initialSpeedRange[0];
-        currentPath = startPath; 
+        currentPath = startPath;
+
+        sprite.color = initialColor; 
     }
 
 
@@ -67,7 +72,9 @@ public class PathManager : MonoBehaviour
             if (!finalTimerComplete)
             {
                 GetToFinalPosition();
-                finalTimerComplete = true; 
+                finalTimerComplete = true;
+                
+                choiceManager.ChooseFish(); 
             }
             
         }
@@ -129,7 +136,7 @@ public class PathManager : MonoBehaviour
 
     void ChangeSprite()
     {
-        sprite.color = new Color(0.29f, 0.60f, 0.80f); 
+        sprite.color = inWaterColor; 
     }
    
 }
