@@ -27,6 +27,16 @@ namespace HARDYCorentin{
                 Debug.Log("B");
             }
             //else if ()
-        } 
+        }
+        public void MoveLeft()
+        {
+            transform.position = new Vector3(player.transform.position.x + playermoveleft, 0f);
+            Debug.Log("A");
+        }
+        public void MoveRight()
+        {
+            transform.position = new Vector3(player.transform.position.x + playermoveright, 0f);
+            Debug.Log("A");
+        }
     }
 }
