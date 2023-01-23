@@ -9,6 +9,8 @@ namespace Dylan
         public GameObject Cube;
         public float minTime, maxTime;
         public float currentTime;
+        public int countDownDefeat = 0;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -31,8 +33,17 @@ namespace Dylan
             }
             if (timeRemaining <= 0)
             {
+                Debug.Log("J'EXPLOSE A L'AIDE");
+                countDownDefeat = countDownDefeat + 1;
                 Destroy(Cube.transform.gameObject);
+                
             }
+            if(countDownDefeat >= 2)
+            {
+                Debug.Log("T'AS PERDU HAHAHAH");
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+            }
+
         }
     }
 }

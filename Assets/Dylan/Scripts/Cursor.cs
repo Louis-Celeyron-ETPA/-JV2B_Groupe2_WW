@@ -6,10 +6,10 @@ using Dylan;
 public class Cursor : MonoBehaviour
 {
     public GameObject carre;
-    private float carreMoveLeft = -10f;
-    private float carreMoveRight = 10f;
-    private float carreMoveUp = 10f;
-    private float carreMoveDown = -10f;
+    private float carreMoveLeft = -0.3f;
+    private float carreMoveRight = 0.3f;
+    private float carreMoveUp = 0.3f;
+    private float carreMoveDown = -0.3f;
     public RectTransform myRectTreansform;
     // Start is called before the first frame update
     void Start()
