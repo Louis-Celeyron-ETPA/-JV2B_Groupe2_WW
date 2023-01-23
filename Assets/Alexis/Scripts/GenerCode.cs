@@ -24,7 +24,23 @@ public class GenerCode : MonoBehaviour
 
     void Start()
     {
-        //if (ManagerManager.DifficultyManager.GetDifficulty() = 0)
+        //Plus c'est dur, plus la combinaison est longue
+        if (ManagerManager.DifficultyManager.GetDifficulty() == 1)
+        {
+            _dif = 3;
+        }
+
+        if (ManagerManager.DifficultyManager.GetDifficulty() == 2)
+        {
+            _dif = 5;
+        }
+
+        if (ManagerManager.DifficultyManager.GetDifficulty() == 3)
+        {
+            _dif = 7;
+        }
+
+
         for (int i = 0; i < 7; i++)
         {
             listeTexte[i].alpha = 0;

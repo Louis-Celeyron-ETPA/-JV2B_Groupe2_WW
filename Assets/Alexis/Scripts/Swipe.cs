@@ -80,7 +80,7 @@ public class Swipe : MonoBehaviour
             }
             
         }
-        if (ind>refGeneration.GetComponent<Generation>()._nbrATrier)
+        if (ind>refGeneration.GetComponent<Generation>().nbrATrier)
         {
             Debug.Log("yes");
             ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);  

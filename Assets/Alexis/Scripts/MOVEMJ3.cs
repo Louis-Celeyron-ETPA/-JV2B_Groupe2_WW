@@ -74,7 +74,7 @@ public class MOVEMJ3 : MonoBehaviour
 
     public void ValideNombre()
     {
-        if(refBool.GetComponent<Verif>().totalvert==_nombre)
+        if(refBool.GetComponent<Verif>().totalVert==_nombre)
         {
             ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
 

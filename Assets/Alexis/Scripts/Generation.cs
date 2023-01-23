@@ -10,6 +10,7 @@ namespace Alexis
         private int _couleur;
         private Color _couleurA = Color.cyan, _couleurB = Color.yellow, _couleurC = Color.magenta;
         private bool _aTourne = false;
+        // à la base c'était censé être des assiettes mais y avait plus de budget
         public List<GameObject> listeAssiette = new List<GameObject>();
         public GameObject reference;
         public int nbrATrier = 25;
@@ -18,6 +19,22 @@ namespace Alexis
 
         void Start()
         {
+            //Plus c'est dur, plus il y a d'objets à trier
+            if (ManagerManager.DifficultyManager.GetDifficulty() == 1)
+            {
+                nbrATrier = 10;
+            }
+
+            if (ManagerManager.DifficultyManager.GetDifficulty() == 2)
+            {
+                nbrATrier = 20;
+            }
+
+            if (ManagerManager.DifficultyManager.GetDifficulty() == 3)
+            {
+                nbrATrier = 30;
+            }
+            
             Spawn();
             //je sais c'est crade mais c'est pour éviter que la victoire se trigger alors qu'il reste encore un objet à trier
             nbrATrier +=1;

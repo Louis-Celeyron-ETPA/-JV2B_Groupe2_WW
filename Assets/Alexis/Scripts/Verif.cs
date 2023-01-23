@@ -13,7 +13,7 @@ public class Verif : MonoBehaviour
     {
         for (int i = 0; i < 9; i++)
         {
-            var currentcolor = listeBoules[i].GetComponent<Mat>().numcol;
+            var currentcolor = listeBoules[i].GetComponent<Mat>().numCol;
             if (currentcolor == 1)
             {
                 totalVert = totalVert + 1;
